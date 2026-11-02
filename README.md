@@ -3,7 +3,7 @@
 **Plateforme de marketplace inspirée d'Avito.ru pour le marché béninois**
 
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)](https://bemarket-benin.vercel.app)
-[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-brightgreen?logo=github)](https://newgentrade01-web.github.io/BeMarket/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-brightgreen?logo=github)](https://newgentrade01-web.github.io/bemarket/)
 [![Supabase](https://img.shields.io/badge/Backend-Supabase-3ECF8E?logo=supabase)](https://supabase.com)
 
 ---
@@ -37,7 +37,7 @@
 ## 🚀 URLs de déploiement
 
 - **Production (Vercel)** : [bemarket-benin.vercel.app](https://bemarket-benin.vercel.app) *(à configurer)*
-- **GitHub Pages** : [newgentrade01-web.github.io/BeMarket](https://newgentrade01-web.github.io/BeMarket/) ✅ **LIVE**
+- **GitHub Pages** : [newgentrade01-web.github.io/bemarket](https://newgentrade01-web.github.io/bemarket/) ✅ **LIVE**
 
 ---
 
@@ -171,7 +171,7 @@ Ce projet est privé. Pour contribuer :
 
 ## 🔗 Liens utiles
 
-- **GitHub** : [newgentrade01-web/BeMarket](https://github.com/newgentrade01-web/BeMarket)
+- **GitHub** : [newgentrade01-web/bemarket](https://github.com/newgentrade01-web/bemarket)
 - **Supabase** : [Dashboard](https://supabase.com/dashboard)
 - **Vercel** : [Dashboard](https://vercel.com/dashboard)
 - **Design Inspiration** : [Avito.ru](https://www.avito.ru)
