@@ -3,15 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BE-MARKET Bénin | Produits Individuels & Pack Bonus Additionnel</title>
-  
-  <!-- Fonts -->
+
+  <!-- SEO Meta Tags -->
+  <title>BeMarket Bénin - Marketplace #1 | Acheter & Vendre en Ligne</title>
+  <meta name="description" content="BeMarket : marketplace leader au Bénin. Achetez et vendez facilement. Électronique, mode, immobilier, véhicules. Livraison rapide à Cotonou, Calavi, Porto-Novo.">
+  <meta name="keywords" content="marketplace bénin, achat vente bénin, bemarket, cotonou, calavi, porto-novo, annonces bénin">
+  <meta name="author" content="BeMarket Bénin">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bemarket-benin.vercel.app">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bemarket-benin.vercel.app">
+  <meta property="og:title" content="BeMarket Bénin - Marketplace #1">
+  <meta property="og:description" content="Achetez et vendez facilement au Bénin. Livraison rapide, paiement sécurisé.">
+  <meta property="og:image" content="https://bemarket-benin.vercel.app/og-image.jpg">
+  <meta property="og:site_name" content="BeMarket Bénin">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://bemarket-benin.vercel.app">
+  <meta name="twitter:title" content="BeMarket Bénin - Marketplace #1">
+  <meta name="twitter:description" content="Marketplace leader au Bénin. Achetez et vendez en ligne.">
+  <meta name="twitter:image" content="https://bemarket-benin.vercel.app/twitter-image.jpg">
+
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="BJ">
+  <meta name="geo.placename" content="Cotonou">
+  <meta name="geo.position" content="6.3703;2.3912">
+  <meta name="ICBM" content="6.3703, 2.3912">
+
+  <!-- Mobile -->
+  <meta name="theme-color" content="#6366F1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Fonts - Inter & Space Grotesk -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Cabinet+Grotesk:wght@800;900&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
   <!-- FontAwesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -22,19 +56,43 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['"Cabinet Grotesk"', '"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
           },
           colors: {
-            bjGreen: '#008751',
-            bjYellow: '#FCD116',
-            bjRed: '#E8112D',
-            momo: '#FFCC00',
-            celtiis: '#00529B',
-            moov: '#FF6600',
-            trustpilot: '#00B67A',
-            darkglass: 'rgba(15, 23, 42, 0.75)',
-            lightglass: 'rgba(255, 255, 255, 0.06)'
+            primary: {
+              50: '#EEF2FF',
+              100: '#E0E7FF',
+              500: '#6366F1',
+              600: '#4F46E5',
+              700: '#4338CA',
+              900: '#312E81',
+            },
+            secondary: {
+              300: '#67E8F9',
+              500: '#06B6D4',
+              600: '#0891B2',
+              700: '#0E7490',
+            }
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'shimmer': 'shimmer 2s linear infinite',
+            'fadeSlideIn': 'fadeSlideIn 0.6s ease-out forwards',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px) scale(1)' },
+              '50%': { transform: 'translateY(-8px) scale(1.02)' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-1000px 0' },
+              '100%': { backgroundPosition: '1000px 0' },
+            },
+            fadeSlideIn: {
+              'from': { opacity: '0', transform: 'translateY(30px)' },
+              'to': { opacity: '1', transform: 'translateY(0)' },
+            }
           }
         }
       }
@@ -43,2458 +101,837 @@
 
   <style>
     /* Custom Scrollbar */
-    ::-webkit-scrollbar { width: 8px; height: 8px; }
-    ::-webkit-scrollbar-track { background: #0b0f19; }
-    ::-webkit-scrollbar-thumb { background: #008751; border-radius: 9999px; }
-
-    .benin-gradient-bar {
-      background: linear-gradient(90deg, #008751 0%, #008751 33.3%, #FCD116 33.3%, #FCD116 66.6%, #E8112D 66.6%, #E8112D 100%);
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: #0F172A; }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #6366F1 0%, #06B6D4 100%);
+      border-radius: 10px;
     }
+    ::-webkit-scrollbar-thumb:hover { background: #4F46E5; }
 
+    /* Glassmorphism */
     .glass-card {
-      background: rgba(18, 26, 43, 0.7);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background: rgba(30, 41, 59, 0.4);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
       border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.05);
     }
 
     .glass-card-hover {
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
     .glass-card-hover:hover {
-      transform: translateY(-4px);
-      border-color: rgba(0, 135, 81, 0.4);
-      box-shadow: 0 20px 35px -10px rgba(0, 135, 81, 0.15);
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow:
+        0 20px 40px rgba(99, 102, 241, 0.2),
+        0 0 30px rgba(6, 182, 212, 0.15);
     }
 
-    .glass-card-active {
-      background: rgba(0, 135, 81, 0.12);
-      border: 1px solid rgba(0, 135, 81, 0.6);
-      box-shadow: 0 0 25px rgba(0, 135, 81, 0.25);
+    /* Gradient Text */
+    .gradient-text {
+      background: linear-gradient(135deg, #6366F1 0%, #06B6D4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    /* Infinite Marquee */
-    @keyframes marquee {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
-    }
-    .animate-marquee {
-      display: flex;
-      width: 200%;
-      animation: marquee 25s linear infinite;
-    }
-    .animate-marquee:hover {
-      animation-play-state: paused;
+    /* Shimmer Loading Effect */
+    .shimmer {
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.03) 25%,
+        rgba(255, 255, 255, 0.08) 50%,
+        rgba(255, 255, 255, 0.03) 75%
+      );
+      background-size: 2000px 100%;
+      animation: shimmer 2s linear infinite;
     }
 
-    /* Ambient animated mesh gradients */
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 0.35; transform: scale(1) translate(0, 0); }
-      50% { opacity: 0.6; transform: scale(1.1) translate(20px, -15px); }
-    }
-    .mesh-glow-1 {
-      animation: pulseGlow 12s ease-in-out infinite alternate;
-    }
-    .mesh-glow-2 {
-      animation: pulseGlow 16s ease-in-out infinite alternate-reverse;
+    /* Product Card Image Overlay */
+    .product-image-overlay {
+      position: relative;
+      overflow: hidden;
     }
 
-    /* Pulsing Badge */
-    @keyframes pulseSoft {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
+    .product-image-overlay::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.6) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
-    .dot-pulse {
-      animation: pulseSoft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+    .product-image-overlay:hover::after {
+      opacity: 1;
+    }
+
+    /* Ambient Light Mesh */
+    .mesh-gradient {
+      background:
+        radial-gradient(at 20% 30%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+        radial-gradient(at 80% 70%, rgba(6, 182, 212, 0.12) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(147, 51, 234, 0.08) 0px, transparent 50%);
+      animation: float 8s ease-in-out infinite;
+    }
+
+    /* Button Styles */
+    .btn-primary {
+      background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 14px rgba(6, 182, 212, 0.3);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(6, 182, 212, 0.4);
+    }
+
+    /* Input Glass Style */
+    .input-glass {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .input-glass:focus {
+      border-color: #6366F1;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+      background: rgba(255, 255, 255, 0.08);
+      outline: none;
+    }
+
+    /* Badge Styles */
+    .badge-new {
+      background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-featured {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Fade in animation on scroll */
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "BeMarket Bénin",
+    "url": "https://bemarket-benin.vercel.app",
+    "description": "Marketplace leader au Bénin pour acheter et vendre en ligne",
+    "inLanguage": "fr-FR",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://bemarket-benin.vercel.app/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Bénin"
+    }
+  }
+  </script>
 </head>
-<body class="bg-[#070b14] text-slate-100 antialiased font-sans flex flex-col min-h-screen selection:bg-bjGreen selection:text-white relative overflow-x-hidden">
+<body class="bg-[#0B1120] text-slate-100 antialiased font-sans min-h-screen selection:bg-primary-500 selection:text-white overflow-x-hidden">
 
-  <!-- Ambient Light Orbs -->
-  <div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-emerald-600/15 rounded-full blur-[140px] pointer-events-none mesh-glow-1 z-0"></div>
-  <div class="fixed top-1/3 -right-20 w-[450px] h-[450px] bg-yellow-500/10 rounded-full blur-[140px] pointer-events-none mesh-glow-2 z-0"></div>
-  <div class="fixed -bottom-20 left-10 w-[400px] h-[400px] bg-red-600/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
-
-  <!-- Benin Tri-Color Line -->
-  <div class="h-1.5 w-full benin-gradient-bar relative z-50"></div>
-
-  <!-- Top Announcement Bar -->
-  <div class="bg-black/60 border-b border-white/5 backdrop-blur-md text-xs py-2 px-4 relative z-40">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-slate-300">
-      <div class="flex items-center gap-2">
-        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black bg-bjGreen text-white uppercase tracking-wider">
-          <span class="w-1.5 h-1.5 rounded-full bg-bjYellow mr-1.5 dot-pulse"></span> 100% Bénin Direct
-        </span>
-        <span class="text-slate-300 text-xs">
-          Livraison express à domicile & bureau à <strong class="text-white" id="userCityHeader">Cotonou & Calavi</strong>
-        </span>
-      </div>
-      <div class="flex items-center gap-4 text-[11px] font-medium">
-        <span class="text-slate-400"><i class="fa-solid fa-money-bill-transfer text-bjYellow mr-1"></i> Cash, MoMo & Celtiis à la livraison</span>
-        <span class="hidden md:inline text-slate-700">|</span>
-        <a href="https://wa.me/22901990011" target="_blank" class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1 font-bold">
-          <i class="fa-brands fa-whatsapp text-sm"></i> +229 01 99 00 11
-        </a>
-      </div>
-    </div>
-  </div>
+  <!-- Ambient Mesh Background -->
+  <div class="fixed inset-0 mesh-gradient pointer-events-none z-0"></div>
 
   <!-- Navigation Header -->
-  <header class="sticky top-0 z-40 bg-[#090d18]/85 backdrop-blur-xl border-b border-white/10">
+  <header class="sticky top-0 z-50 glass-card border-b border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20 gap-4">
-        
+      <div class="flex items-center justify-between h-16">
+
         <!-- Logo -->
-        <a href="#" class="flex items-center gap-3 shrink-0 group">
-          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-500 via-bjGreen to-slate-900 border border-emerald-400/30 flex items-center justify-center text-white shadow-lg shadow-emerald-950/60 group-hover:scale-105 transition-transform">
-            <span class="font-display font-black text-xl tracking-tighter">BE</span>
+        <a href="/" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center shadow-lg shadow-primary-500/30 group-hover:scale-110 transition-transform">
+            <i class="fas fa-store text-white text-lg"></i>
           </div>
-          <div>
-            <div class="flex items-center gap-1.5">
-              <span class="text-xl sm:text-2xl font-display font-black tracking-tight text-white">BE-MARKET</span>
-              <span class="w-2 h-2 rounded-full bg-bjYellow"></span>
-            </div>
-            <p class="text-[9px] uppercase font-bold tracking-widest text-slate-400 -mt-1">Catalogue Produits & Pack Bonus • Bénin</p>
+          <div class="hidden sm:block">
+            <h1 class="text-xl font-display font-bold gradient-text">BeMarket</h1>
+            <p class="text-[9px] uppercase font-semibold tracking-widest text-slate-400">Bénin Marketplace</p>
           </div>
         </a>
 
-        <!-- AI Semantic Search Bar -->
-        <div class="hidden md:flex flex-1 max-w-lg mx-4">
+        <!-- Search Bar (Desktop) -->
+        <div class="hidden md:flex flex-1 max-w-2xl mx-8">
           <div class="relative w-full">
-            <input 
-              type="text" 
-              id="aiSearchInput" 
-              placeholder="Recherche IA sémantique : moustiques, cuir, boue, micro sans fil..." 
-              class="w-full pl-11 pr-28 py-2.5 bg-slate-900/90 border border-white/10 rounded-full text-xs text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all"
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Rechercher des produits, catégories..."
+              class="w-full input-glass pl-12 pr-4 py-3 rounded-xl text-sm text-white placeholder-slate-400"
+              aria-label="Recherche"
             >
-            <i class="fa-solid fa-wand-magic-sparkles text-xs absolute left-4 top-3.5 text-emerald-400"></i>
-            <button onclick="openGeminiModal('pack')" class="absolute right-1.5 top-1.5 px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 hover:brightness-110 flex items-center gap-1.5 shadow-sm transition">
-              <i class="fa-solid fa-brain text-[10px]"></i>
-              <span>Conseil IA</span>
+            <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+            <button class="absolute right-2 top-1/2 -translate-y-1/2 btn-primary px-4 py-1.5 rounded-lg text-xs font-semibold">
+              Rechercher
             </button>
           </div>
         </div>
 
-        <!-- Right Header Actions -->
+        <!-- Right Actions -->
         <div class="flex items-center gap-3">
-          
-          <!-- Best Sellers Quick Link -->
-          <a href="#best-sellers-frame" class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-red-600/20 to-amber-500/20 border border-red-500/40 text-amber-300 font-black text-xs hover:border-amber-400 transition">
-            <i class="fa-solid fa-fire text-bjRed animate-pulse"></i>
-            <span>Top Best-Sellers</span>
-          </a>
-
-          <!-- AI Assistant Header Button -->
-          <button onclick="openGeminiModal('pack')" class="hidden xl:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 border border-emerald-400/40 text-emerald-300 font-black text-xs hover:border-emerald-300 transition">
-            <i class="fa-solid fa-wand-magic-sparkles text-emerald-400 animate-spin" style="animation-duration: 6s;"></i>
-            <span>Architecte IA</span>
+          <!-- Location -->
+          <button class="hidden lg:flex items-center gap-2 glass-card px-3 py-2 rounded-lg hover:border-primary-500/40 transition-colors">
+            <i class="fas fa-location-dot text-secondary-500 text-sm"></i>
+            <span id="userCity" class="text-sm font-medium">Cotonou</span>
+            <i class="fas fa-chevron-down text-xs text-slate-400"></i>
           </button>
 
-          <!-- City Selector -->
-          <div class="hidden sm:flex items-center gap-1.5 bg-slate-900/80 border border-white/10 px-3 py-1.5 rounded-xl text-xs">
-            <i class="fa-solid fa-location-dot text-bjRed"></i>
-            <select id="globalCitySelector" onchange="changeGlobalCity(this.value)" class="bg-transparent text-white font-bold text-xs focus:outline-none cursor-pointer">
-              <option value="Cotonou" class="bg-slate-900">Cotonou (24h)</option>
-              <option value="Abomey-Calavi" class="bg-slate-900">Abomey-Calavi (24h)</option>
-              <option value="Porto-Novo" class="bg-slate-900">Porto-Novo (24-48h)</option>
-              <option value="Parakou" class="bg-slate-900">Parakou (48h Bus)</option>
-              <option value="Ouidah" class="bg-slate-900">Ouidah (24h)</option>
-            </select>
-          </div>
-
-          <!-- Pack Bonus Quick Jump -->
-          <a href="#pack-bonus-builder" class="hidden lg:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-amber-500/20 to-yellow-500/10 border border-yellow-500/30 text-yellow-300 font-bold text-xs hover:border-yellow-400/60 transition">
-            <i class="fa-solid fa-gift text-sm"></i>
-            <span>Pack Bonus (<span id="packBonusBadgeCount">0</span>/5)</span>
-          </a>
-
-          <!-- Cart Drawer Button -->
-          <button 
-            onclick="toggleCartDrawer()" 
-            aria-label="Ouvrir le panier"
-            class="relative px-3.5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-emerald-950/40 transition active:scale-95">
-            <i class="fa-solid fa-bag-shopping text-sm"></i>
-            <span class="hidden sm:inline">Panier</span>
-            <span id="cartCountBadge" class="w-5 h-5 bg-bjRed text-white text-[10px] font-black rounded-full flex items-center justify-center">0</span>
+          <!-- Favorites -->
+          <button class="relative glass-card p-2.5 rounded-lg hover:border-primary-500/40 transition-colors" aria-label="Favoris">
+            <i class="far fa-heart text-lg"></i>
+            <span class="absolute -top-1 -right-1 w-5 h-5 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full text-[10px] font-bold flex items-center justify-center">3</span>
           </button>
 
+          <!-- User Menu -->
+          <button class="glass-card p-2.5 rounded-lg hover:border-primary-500/40 transition-colors" aria-label="Menu utilisateur">
+            <i class="far fa-user text-lg"></i>
+          </button>
+
+          <!-- Sell Button -->
+          <button class="hidden md:flex btn-primary items-center gap-2 px-4 py-2.5 rounded-lg font-semibold text-sm">
+            <i class="fas fa-plus"></i>
+            <span>Vendre</span>
+          </button>
         </div>
-
       </div>
-    </div>
 
-    <!-- Mobile Search -->
-    <div class="md:hidden px-4 pb-3">
-      <div class="relative w-full">
-        <input 
-          type="text" 
-          id="mobileSearchInput" 
-          placeholder="Rechercher un produit (poussière, cheveux, son, sneakers)..." 
-          class="w-full pl-9 pr-4 py-2 bg-slate-900 border border-white/10 rounded-full text-xs text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500"
-        >
-        <i class="fa-solid fa-magnifying-glass text-xs absolute left-3.5 top-2.5 text-slate-400"></i>
+      <!-- Mobile Search -->
+      <div class="md:hidden pb-3">
+        <div class="relative w-full">
+          <input
+            type="text"
+            placeholder="Rechercher..."
+            class="w-full input-glass pl-10 pr-4 py-2.5 rounded-lg text-sm"
+            aria-label="Recherche mobile"
+          >
+          <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Hero Motion Video & Glassmorphism Showcase -->
-  <section class="relative pt-12 pb-16 px-4 sm:px-6 lg:px-8 z-10">
-    <div class="max-w-7xl mx-auto">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        
-        <!-- Left Hero Copy -->
-        <div class="lg:col-span-7 space-y-6">
-          
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold">
-            <span class="w-2 h-2 rounded-full bg-bjYellow dot-pulse"></span>
-            <span>NOUVELLE VERSION 3.0 : PRODUITS INDIVIDUELS & PACK BONUS</span>
+  <!-- Hero Section with Categories -->
+  <section class="relative pt-12 pb-8 fade-in-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Hero Content -->
+      <div class="text-center mb-12">
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-4">
+          Achetez & Vendez
+          <span class="gradient-text">facilement</span>
+        </h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Marketplace #1 au Bénin. Des milliers de produits disponibles à Cotonou, Calavi et Porto-Novo.
+        </p>
+
+        <!-- Quick Stats -->
+        <div class="flex flex-wrap justify-center gap-8 mt-8">
+          <div class="text-center">
+            <div class="text-3xl font-bold gradient-text">12K+</div>
+            <div class="text-sm text-slate-400">Produits</div>
           </div>
-
-          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-display font-black text-white leading-[1.08] tracking-tight">
-            Les solutions concrètes pour <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-yellow-300 to-emerald-200">votre quotidien au Bénin.</span>
-          </h1>
-
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
-            Achetez chaque produit <strong>à l'unité</strong> selon vos besoins réels, ou combinez de <strong>3 à 5 produits</strong> dans votre <strong>Pack Bonus Additionnel</strong> pour débloquer jusqu'à <strong>-25% de remise immédiate</strong>.
-          </p>
-
-          <!-- Quick Trust Points -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-            <div class="glass-card p-3 rounded-2xl">
-              <i class="fa-solid fa-truck-fast text-emerald-400 text-lg mb-1"></i>
-              <h4 class="text-xs font-bold text-white">Livraison 24h</h4>
-              <p class="text-[10px] text-slate-400" id="heroDeliveryCityText">À Cotonou & Calavi</p>
-            </div>
-            <div class="glass-card p-3 rounded-2xl">
-              <i class="fa-solid fa-money-bill-wave text-yellow-400 text-lg mb-1"></i>
-              <h4 class="text-xs font-bold text-white">Zéro Risque</h4>
-              <p class="text-[10px] text-slate-400">Paiement à la réception</p>
-            </div>
-            <div class="glass-card p-3 rounded-2xl col-span-2 sm:col-span-1">
-              <i class="fa-solid fa-shield-heart text-bjRed text-lg mb-1"></i>
-              <h4 class="text-xs font-bold text-white">Testé au Bénin</h4>
-              <p class="text-[10px] text-slate-400">Efficacité garantie</p>
-            </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold gradient-text">5K+</div>
+            <div class="text-sm text-slate-400">Vendeurs</div>
           </div>
-
-          <!-- Hero CTAs -->
-          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-            <a href="#productsCatalog" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-extrabold text-xs text-center shadow-lg shadow-emerald-950/80 transition active:scale-95 flex items-center justify-center gap-2">
-              <i class="fa-solid fa-layer-group"></i>
-              <span>Voir les 24 Produits à l'Unité</span>
-            </a>
-            <a href="#pack-bonus-builder" class="px-6 py-3.5 rounded-2xl glass-card hover:bg-white/10 text-yellow-300 font-bold text-xs text-center border border-yellow-500/30 transition flex items-center justify-center gap-2">
-              <i class="fa-solid fa-wand-magic-sparkles text-yellow-400"></i>
-              <span>Créer mon Pack Bonus (-25%)</span>
-            </a>
-          </div>
-
-        </div>
-
-        <!-- Right Hero: Motion Video Mockup Card -->
-        <div class="lg:col-span-5">
-          <div class="glass-card rounded-3xl p-5 border border-white/15 relative overflow-hidden shadow-2xl">
-            
-            <div class="flex items-center justify-between pb-3 border-b border-white/10">
-              <div class="flex items-center gap-2">
-                <span class="w-3 h-3 rounded-full bg-bjRed"></span>
-                <span class="w-3 h-3 rounded-full bg-bjYellow"></span>
-                <span class="w-3 h-3 rounded-full bg-bjGreen"></span>
-                <span class="text-[11px] font-bold text-slate-300 ml-1">Démo Motion Vidéo • En direct</span>
-              </div>
-              <span class="px-2 py-0.5 rounded-md bg-red-500/20 text-red-400 text-[10px] font-black tracking-wide flex items-center gap-1">
-                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> LIVE
-              </span>
-            </div>
-
-            <!-- Simulated Motion Video Canvas Container -->
-            <div class="relative aspect-video rounded-2xl overflow-hidden mt-4 bg-slate-950 border border-white/10 group">
-              
-              <!-- Video Frame with Dynamic Switchable Previews -->
-              <img 
-                id="heroVideoThumbnail" 
-                src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=800&q=80" 
-                alt="Vidéo Démonstration BE-MARKET" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80"
-              >
-
-              <!-- Video overlay controls & tags -->
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent flex flex-col justify-between p-4">
-                
-                <div class="flex justify-between items-start">
-                  <span id="videoCategoryTag" class="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-black/60 backdrop-blur-md text-yellow-300 border border-white/10">
-                    🚗 Car Care Detailing
-                  </span>
-                  <button onclick="toggleHeroVideoPlay()" id="videoPlayBtn" class="w-10 h-10 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-lg transition transform hover:scale-110">
-                    <i class="fa-solid fa-pause text-xs" id="videoPlayIcon"></i>
-                  </button>
-                </div>
-
-                <div>
-                  <h4 id="videoTitleText" class="text-sm font-black text-white mb-1">
-                    Démonstration : Rénovateur tableau de bord face à la poussière de Cotonou
-                  </h4>
-                  <div class="flex items-center justify-between text-[11px] text-slate-300">
-                    <span>Test avant/après en conditions réelles</span>
-                    <span class="text-emerald-400 font-bold">100% Efficace</span>
-                  </div>
-                </div>
-
-              </div>
-
-              <!-- Animated Video Progress Bar -->
-              <div class="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-bjGreen via-bjYellow to-bjRed w-full" id="videoProgressBar"></div>
-            </div>
-
-            <!-- Quick Category Switchers for Video Demonstration -->
-            <div class="mt-4 flex gap-2 overflow-x-auto pb-1 text-[11px] no-scrollbar">
-              <button onclick="switchHeroVideo('car')" class="px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 font-semibold shrink-0 transition">
-                🚗 Voiture
-              </button>
-              <button onclick="switchHeroVideo('hair')" class="px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 font-semibold shrink-0 transition">
-                💇🏾‍♀️ Cheveux Afro
-              </button>
-              <button onclick="switchHeroVideo('mosq')" class="px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 font-semibold shrink-0 transition">
-                🦟 Moustiques
-              </button>
-              <button onclick="switchHeroVideo('sneaker')" class="px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 font-semibold shrink-0 transition">
-                👟 Sneakers
-              </button>
-              <button onclick="switchHeroVideo('creator')" class="px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 font-semibold shrink-0 transition">
-                🎥 Micro Vidéo
-              </button>
-            </div>
-
+          <div class="text-center">
+            <div class="text-3xl font-bold gradient-text">24h</div>
+            <div class="text-sm text-slate-400">Livraison</div>
           </div>
         </div>
-
       </div>
 
-    </div>
-  </section>
+      <!-- Categories Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8 gap-3 mb-8">
+        <!-- Category Card Template -->
+        <button class="glass-card glass-card-hover p-4 rounded-xl text-center group">
+          <div class="w-12 h-12 mx-auto mb-2 rounded-lg bg-gradient-to-br from-primary-500/20 to-secondary-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="fas fa-laptop text-primary-500 text-xl"></i>
+          </div>
+          <div class="text-xs font-semibold">Électronique</div>
+        </button>
 
-  <!-- Official Partners Banner (Infinite Marquee) -->
-  <section class="py-6 border-y border-white/10 bg-slate-950/60 backdrop-blur-md relative overflow-hidden z-20">
-    <div class="max-w-7xl mx-auto px-4 mb-2 flex items-center justify-between text-[11px] text-slate-400 uppercase font-black tracking-widest">
-      <span><i class="fa-solid fa-handshake text-emerald-400 mr-2"></i> Nos Partenaires Paiement & Logistique au Bénin</span>
-      <span class="text-emerald-400 hidden sm:inline">Transaction Sécurisée</span>
-    </div>
+        <button class="glass-card glass-card-hover p-4 rounded-xl text-center group">
+          <div class="w-12 h-12 mx-auto mb-2 rounded-lg bg-gradient-to-br from-primary-500/20 to-secondary-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="fas fa-tshirt text-primary-500 text-xl"></i>
+          </div>
+          <div class="text-xs font-semibold">Mode</div>
+        </button>
 
-    <div class="relative w-full overflow-hidden">
-      <!-- Gradient Mask edges -->
-      <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#070b14] to-transparent z-10 pointer-events-none"></div>
-      <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#070b14] to-transparent z-10 pointer-events-none"></div>
+        <button class="glass-card glass-card-hover p-4 rounded-xl text-center group">
+          <div class="w-12 h-12 mx-auto mb-2 rounded-lg bg-gradient-to-br from-primary-500/20 to-secondary-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="fas fa-home text-primary-500 text-xl"></i>
+          </div>
+          <div class="text-xs font-semibold">Maison</div>
+        </button>
 
-      <div class="animate-marquee items-center gap-8 py-2">
-        <div class="flex items-center gap-8 shrink-0">
-          <div class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-            <span class="w-3.5 h-3.5 rounded-full bg-momo"></span>
-            <span class="text-xs font-black text-white">MTN Mobile Money Bénin (MoMo)</span>
+        <button class="glass-card glass-card-hover p-4 rounded-xl text-center group">
+          <div class="w-12 h-12 mx-auto mb-2 rounded-lg bg-gradient-to-br from-primary-500/20 to-secondary-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="fas fa-car text-primary-500 text-xl"></i>
           </div>
-          <div class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-            <span class="w-3.5 h-3.5 rounded-full bg-celtiis"></span>
-            <span class="text-xs font-black text-white">Celtiis Cash Bénin</span>
-          </div>
-          <div class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-            <span class="w-3.5 h-3.5 rounded-full bg-moov"></span>
-            <span class="text-xs font-black text-white">Moov Africa Flooz</span>
-          </div>
-          <div class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-            <i class="fa-solid fa-motorcycle text-emerald-400"></i>
-            <span class="text-xs font-black text-white">Gozem Express Cotonou</span>
-          </div>
-          <div class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-            <i class="fa-solid fa-plane-departure text-yellow-400"></i>
-            <span class="text-xs font-black text-white">DHL Express Bénin</span>
-          </div>
-          <div class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-            <i class="fa-solid fa-box text-blue-400"></i>
-            <span class="text-xs font-black text-white">FedEx Bénin</span>
-          </div>
-        </div>
+          <div class="text-xs font-semibold">Véhicules</div>
+        </button>
 
-        <div class="flex items-center gap-8 shrink-0">
-          <div class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-            <span class="w-3.5 h-3.5 rounded-full bg-momo"></span>
-            <span class="text-xs font-black text-white">MTN Mobile Money Bénin (MoMo)</span>
+        <button class="glass-card glass-card-hover p-4 rounded-xl text-center group">
+          <div class="w-12 h-12 mx-auto mb-2 rounded-lg bg-gradient-to-br from-primary-500/20 to-secondary-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="fas fa-building text-primary-500 text-xl"></i>
           </div>
-          <div class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-            <span class="w-3.5 h-3.5 rounded-full bg-celtiis"></span>
-            <span class="text-xs font-black text-white">Celtiis Cash Bénin</span>
+          <div class="text-xs font-semibold">Immobilier</div>
+        </button>
+
+        <button class="glass-card glass-card-hover p-4 rounded-xl text-center group">
+          <div class="w-12 h-12 mx-auto mb-2 rounded-lg bg-gradient-to-br from-primary-500/20 to-secondary-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="fas fa-gamepad text-primary-500 text-xl"></i>
           </div>
-          <div class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-            <span class="w-3.5 h-3.5 rounded-full bg-moov"></span>
-            <span class="text-xs font-black text-white">Moov Africa Flooz</span>
+          <div class="text-xs font-semibold">Loisirs</div>
+        </button>
+
+        <button class="glass-card glass-card-hover p-4 rounded-xl text-center group">
+          <div class="w-12 h-12 mx-auto mb-2 rounded-lg bg-gradient-to-br from-primary-500/20 to-secondary-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="fas fa-briefcase text-primary-500 text-xl"></i>
           </div>
-          <div class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-            <i class="fa-solid fa-motorcycle text-emerald-400"></i>
-            <span class="text-xs font-black text-white">Gozem Express Cotonou</span>
+          <div class="text-xs font-semibold">Emploi</div>
+        </button>
+
+        <button class="glass-card glass-card-hover p-4 rounded-xl text-center group">
+          <div class="w-12 h-12 mx-auto mb-2 rounded-lg bg-gradient-to-br from-primary-500/20 to-secondary-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="fas fa-ellipsis-h text-primary-500 text-xl"></i>
           </div>
-          <div class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-            <i class="fa-solid fa-plane-departure text-yellow-400"></i>
-            <span class="text-xs font-black text-white">DHL Express Bénin</span>
-          </div>
-          <div class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-            <i class="fa-solid fa-box text-blue-400"></i>
-            <span class="text-xs font-black text-white">FedEx Bénin</span>
-          </div>
-        </div>
+          <div class="text-xs font-semibold">Plus</div>
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- Interactive "PACK BONUS ADDITIONNEL" Builder Section -->
-  <section id="pack-bonus-builder" class="py-16 px-4 sm:px-6 lg:px-8 relative z-20">
-    <div class="max-w-7xl mx-auto">
-      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-yellow-500/20 bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-[#0c1322] relative overflow-hidden shadow-2xl">
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10">
-          <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-500/20 border border-yellow-500/40 text-yellow-300 text-xs font-black uppercase tracking-wider mb-2">
-              <i class="fa-solid fa-gift"></i> Module Économique Spécial Bénin
-            </div>
-            <h2 class="text-2xl sm:text-3xl font-display font-black text-white">
-              Créez votre <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-200">Pack Bonus Additionnel</span>
-            </h2>
-            <p class="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl">
-              Sélectionnez <strong>entre 3 et 5 produits</strong> de votre choix dans tout le catalogue. Plus vous ajoutez d'articles, plus la réduction augmente automatiquement !
-            </p>
-          </div>
+  <!-- Products Section (Avito Style) -->
+  <section class="relative py-12 fade-in-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div class="flex items-center gap-2">
-            <div class="text-center p-2.5 rounded-2xl bg-white/5 border border-white/10" id="tierBadge3">
-              <span class="block text-[10px] text-slate-400 uppercase font-bold">3 Produits</span>
-              <span class="text-sm font-black text-white">-15%</span>
-            </div>
-            <div class="text-center p-2.5 rounded-2xl bg-white/5 border border-white/10" id="tierBadge4">
-              <span class="block text-[10px] text-slate-400 uppercase font-bold">4 Produits</span>
-              <span class="text-sm font-black text-white">-20%</span>
-            </div>
-            <div class="text-center p-2.5 rounded-2xl bg-white/5 border border-white/10" id="tierBadge5">
-              <span class="block text-[10px] text-yellow-400 uppercase font-bold">5 Produits</span>
-              <span class="text-sm font-black text-yellow-300">-25% MAX</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="py-8">
-          <div class="flex items-center justify-between text-xs font-bold text-slate-300 mb-3">
-            <span>Vos articles sélectionnés dans le pack (<span id="packBonusCount">0</span>/5) :</span>
-            <span id="packBonusStatusHint" class="text-yellow-400 font-extrabold">Ajoutez au moins 3 articles pour activer le bonus</span>
-          </div>
-
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5" id="bonusPackSlotsContainer">
-            <!-- Rendered by JS -->
-          </div>
-        </div>
-
-        <div class="pt-6 border-t border-white/10 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-          <div class="md:col-span-7 flex flex-wrap items-center gap-6">
-            <div>
-              <span class="text-[11px] text-slate-400 block uppercase font-bold">Prix d'origine cumulé</span>
-              <span class="text-sm text-slate-400 line-through font-bold" id="packOldPrice">0 FCFA</span>
-            </div>
-            <div>
-              <span class="text-[11px] text-yellow-400 block uppercase font-extrabold">Remise Immédiate</span>
-              <span class="text-sm font-black text-yellow-300" id="packDiscountAmount">0 FCFA (0%)</span>
-            </div>
-            <div class="border-l border-white/10 pl-4">
-              <span class="text-[11px] text-emerald-400 block uppercase font-black">Prix Net Pack Promo</span>
-              <span class="text-2xl font-display font-black text-white" id="packFinalPrice">0 FCFA</span>
-            </div>
-          </div>
-
-          <div class="md:col-span-5 flex items-center justify-end gap-3">
-            <button 
-              onclick="clearBonusPack()" 
-              class="px-4 py-3 rounded-2xl bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-bold transition">
-              Vider
-            </button>
-
-            <button 
-              id="orderPackBonusBtn"
-              onclick="orderBonusPackViaWhatsApp()" 
-              disabled
-              class="flex-1 py-3.5 px-6 rounded-2xl bg-slate-800 text-slate-500 font-black text-xs transition flex items-center justify-center gap-2 cursor-not-allowed">
-              <i class="fa-brands fa-whatsapp text-lg"></i>
-              <span id="orderPackBonusBtnText">Ajoutez 3 articles pour commander</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DEDICATED BEST-SELLERS FRAME SECTION -->
-  <section id="best-sellers-frame" class="py-12 px-4 sm:px-6 lg:px-8 relative z-20 border-t border-white/10 bg-gradient-to-b from-[#070b14] via-[#0d1424] to-[#070b14]">
-    <div class="max-w-7xl mx-auto">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+      <!-- Section Header -->
+      <div class="flex items-center justify-between mb-8">
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/15 border border-red-500/30 text-red-400 text-xs font-black uppercase tracking-wider mb-2">
-            <i class="fa-solid fa-fire-flame-curved text-bjRed"></i>
-            <span>LE HALL DES BEST-SELLERS • BÉNIN</span>
-            <span class="w-2 h-2 rounded-full bg-red-500 dot-pulse ml-1"></span>
-          </div>
-          <h2 class="text-2xl sm:text-4xl font-display font-black text-white">
-            Les Produits <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-amber-300 to-yellow-300">les Plus Commandés</span>
-          </h2>
-          <p class="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">
-            Classement direct basé sur les volumes de livraisons confirmées à Cotonou, Calavi et Porto-Novo cette semaine.
-          </p>
+          <h3 class="text-2xl font-display font-bold mb-1">Annonces récentes</h3>
+          <p class="text-sm text-slate-400">Découvrez les dernières offres</p>
         </div>
 
-        <div class="flex flex-wrap items-center gap-3 text-xs">
-          <div class="px-3.5 py-2 rounded-2xl bg-white/5 border border-white/10 flex items-center gap-2 text-slate-300">
-            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span id="bestSellerLiveActivity">Dernière commande : Micro 2.4G à Cadjehoun (il y a 4 min)</span>
-          </div>
-          <button onclick="scrollToBonusPack()" class="px-4 py-2 rounded-2xl bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 text-yellow-300 font-bold transition flex items-center gap-1.5">
-            <i class="fa-solid fa-gift"></i>
-            <span>Pack Bonus (-15% à -25%)</span>
+        <!-- Filters -->
+        <div class="hidden md:flex items-center gap-3">
+          <select class="input-glass pl-4 pr-10 py-2 rounded-lg text-sm font-medium cursor-pointer" aria-label="Trier par">
+            <option>Les plus récentes</option>
+            <option>Prix croissant</option>
+            <option>Prix décroissant</option>
+            <option>Les plus populaires</option>
+          </select>
+
+          <button class="glass-card px-4 py-2 rounded-lg hover:border-primary-500/40 transition-colors">
+            <i class="fas fa-sliders text-sm mr-2"></i>
+            Filtres
           </button>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="bestSellersContainer"></div>
+      <!-- Products Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4" id="productsGrid">
 
-      <div class="mt-8 p-4 rounded-2xl glass-card border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300">
-        <div class="flex items-center gap-3">
-          <span class="w-8 h-8 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center font-black">
-            <i class="fa-solid fa-bolt"></i>
-          </span>
-          <div>
-            <strong class="text-white">Forte demande actuelle :</strong>
-            <span class="text-slate-400"> Les stocks de ces 4 pépites sont réapprovisionnés chaque mardi à notre dépôt de Cotonou.</span>
+        <!-- Product Card 1 -->
+        <div class="glass-card glass-card-hover rounded-xl overflow-hidden group">
+          <!-- Image -->
+          <div class="relative product-image-overlay aspect-square bg-slate-800">
+            <img src="https://via.placeholder.com/300" alt="Produit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+
+            <!-- Badges -->
+            <div class="absolute top-2 left-2 flex flex-col gap-1">
+              <span class="badge-new">Neuf</span>
+            </div>
+
+            <!-- Favorite Icon -->
+            <button class="absolute top-2 right-2 w-8 h-8 bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/60 transition-colors" aria-label="Ajouter aux favoris">
+              <i class="far fa-heart text-white text-sm"></i>
+            </button>
           </div>
-        </div>
-        <div class="flex items-center gap-2 shrink-0">
-          <span class="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-400 font-extrabold text-[11px]">
-            <i class="fa-solid fa-truck-fast mr-1"></i> Livré dès aujourd'hui
-          </span>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Category Filter Tabs & Semantic AI Search Engine -->
-  <section class="sticky top-20 z-30 bg-[#090d18]/95 backdrop-blur-xl border-y border-white/10 py-3.5 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
-      <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 no-scrollbar" id="categoryChipsContainer"></div>
-      <div class="hidden lg:flex items-center gap-3 text-xs text-slate-400">
-        <span><strong class="text-white" id="displayedCount">24</strong> articles disponibles</span>
-        <span>•</span>
-        <span class="text-emerald-400"><i class="fa-solid fa-circle-check mr-1"></i> En stock Cotonou</span>
-      </div>
-    </div>
-  </section>
+          <!-- Content -->
+          <div class="p-3">
+            <h4 class="font-semibold text-sm mb-1 line-clamp-2 group-hover:text-primary-500 transition-colors">iPhone 14 Pro Max 256GB</h4>
 
-  <!-- Main Individual Products Catalog Grid -->
-  <main id="productsCatalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow relative z-20">
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-      <div>
-        <div class="flex items-center gap-2">
-          <span class="w-2.5 h-6 rounded-full bg-bjGreen"></span>
-          <h2 class="text-2xl font-display font-black text-white" id="catalogHeading">Tous les Produits à l'Unité</h2>
-        </div>
-        <p class="text-xs text-slate-400 mt-1">Cliquez sur un article pour voir sa fiche détaillée ou ajoutez-le directement à votre Pack Bonus.</p>
-      </div>
+            <!-- Location & Time -->
+            <div class="flex items-center gap-1 text-xs text-slate-400 mb-2">
+              <i class="fas fa-location-dot text-[10px]"></i>
+              <span>Cotonou</span>
+              <span>•</span>
+              <span>2h</span>
+            </div>
 
-      <div class="flex items-center gap-2 self-start sm:self-auto text-xs">
-        <label for="sortSelector" class="text-slate-400 font-bold uppercase text-[11px]">Trier :</label>
-        <select id="sortSelector" onchange="sortProducts(this.value)" class="bg-slate-900 border border-white/10 rounded-xl px-3 py-1.5 text-white font-bold focus:outline-none">
-          <option value="featured">Populaires d'abord</option>
-          <option value="price-asc">Prix croissant (FCFA)</option>
-          <option value="price-desc">Prix décroissant (FCFA)</option>
-        </select>
-      </div>
-    </div>
+            <!-- Price -->
+            <div class="flex items-center justify-between">
+              <span class="text-lg font-bold gradient-text">385,000<span class="text-xs ml-0.5">F</span></span>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productsGridContainer"></div>
-  </main>
-
-  <!-- Verified Trustpilot Benin Reviews Section -->
-  <section class="py-16 bg-slate-950/80 border-t border-white/10 relative z-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-        <div>
-          <div class="flex items-center gap-2 mb-2">
-            <span class="text-trustpilot font-black text-lg tracking-tight flex items-center gap-1.5">
-              <i class="fa-solid fa-star text-trustpilot"></i> Trustpilot
-            </span>
-            <span class="px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 text-[10px] font-black uppercase">Avis Vérifiés</span>
-          </div>
-          <h3 class="text-2xl sm:text-3xl font-display font-black text-white">Ce que disent nos acheteurs au Bénin</h3>
-          <p class="text-xs sm:text-sm text-slate-400 mt-1">Note globale de <strong>4.9 / 5</strong> basée sur plus de 1 240 commandes livrées.</p>
-        </div>
-
-        <div class="flex items-center gap-2 bg-white/5 border border-white/10 p-3 rounded-2xl shrink-0">
-          <div class="flex text-trustpilot text-sm">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <span class="text-xs font-black text-white">Excellent 4.9/5</span>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="glass-card p-6 rounded-3xl flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <div class="flex text-trustpilot text-xs">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <!-- Stats -->
+              <div class="flex items-center gap-2 text-xs text-slate-400">
+                <span class="flex items-center gap-1">
+                  <i class="far fa-heart text-[10px]"></i>
+                  12
+                </span>
+                <span class="flex items-center gap-1">
+                  <i class="far fa-eye text-[10px]"></i>
+                  234
+                </span>
               </div>
-              <span class="text-[10px] text-slate-400">Il y a 3 jours</span>
             </div>
-            <h5 class="text-xs font-black text-white mb-2">« Le Pack Bonus à -25% vaut vraiment le coup »</h5>
-            <p class="text-xs text-slate-300 leading-relaxed italic">
-              « J'ai pris 5 produits en composant mon pack : le rénovateur voiture, la raquette anti-moustique, le spray sneaker et le bonnet satin pour ma femme. La remise de 25% est appliquée directement et le livreur est arrivé à Cadjehoun avec le terminal MoMo. Impeccable ! »
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
-            <div>
-              <span class="font-bold text-white block">Boris S.</span>
-              <span class="text-[11px] text-slate-400">Cadjehoun, Cotonou</span>
-            </div>
-            <span class="text-emerald-400 text-[10px] font-bold"><i class="fa-solid fa-circle-check"></i> Commande reçue</span>
           </div>
         </div>
 
-        <div class="glass-card p-6 rounded-3xl flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <div class="flex text-trustpilot text-xs">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <span class="text-[10px] text-slate-400">Il y a 5 jours</span>
+        <!-- Product Card 2 -->
+        <div class="glass-card glass-card-hover rounded-xl overflow-hidden group">
+          <div class="relative product-image-overlay aspect-square bg-slate-800">
+            <img src="https://via.placeholder.com/300" alt="Produit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+
+            <div class="absolute top-2 left-2 flex flex-col gap-1">
+              <span class="badge-featured">Urgent</span>
             </div>
-            <h5 class="text-xs font-black text-white mb-2">« Fini le vacarme des moustiques la nuit »</h5>
-            <p class="text-xs text-slate-300 leading-relaxed italic">
-              « J'ai commandé à l'unité la lampe UV photocatalytique et la raquette avec socle. À Calavi Arconville, les moustiques sont coriaces, mais là c'est le calme total. Matériel solide et recharge USB-C très pratique. »
-            </p>
+
+            <button class="absolute top-2 right-2 w-8 h-8 bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/60 transition-colors" aria-label="Ajouter aux favoris">
+              <i class="far fa-heart text-white text-sm"></i>
+            </button>
           </div>
-          <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
-            <div>
-              <span class="font-bold text-white block">Prudence K.</span>
-              <span class="text-[11px] text-slate-400">Abomey-Calavi</span>
+
+          <div class="p-3">
+            <h4 class="font-semibold text-sm mb-1 line-clamp-2 group-hover:text-primary-500 transition-colors">MacBook Pro M3 14" 16GB RAM</h4>
+
+            <div class="flex items-center gap-1 text-xs text-slate-400 mb-2">
+              <i class="fas fa-location-dot text-[10px]"></i>
+              <span>Calavi</span>
+              <span>•</span>
+              <span>5h</span>
             </div>
-            <span class="text-emerald-400 text-[10px] font-bold"><i class="fa-solid fa-circle-check"></i> Commande reçue</span>
+
+            <div class="flex items-center justify-between">
+              <span class="text-lg font-bold gradient-text">850,000<span class="text-xs ml-0.5">F</span></span>
+
+              <div class="flex items-center gap-2 text-xs text-slate-400">
+                <span class="flex items-center gap-1">
+                  <i class="far fa-heart text-[10px]"></i>
+                  28
+                </span>
+                <span class="flex items-center gap-1">
+                  <i class="far fa-eye text-[10px]"></i>
+                  567
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="glass-card p-6 rounded-3xl flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <div class="flex text-trustpilot text-xs">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <span class="text-[10px] text-slate-400">Il y a 1 semaine</span>
-            </div>
-            <h5 class="text-xs font-black text-white mb-2">« Micro sans fil parfait pour mes vidéos TikTok »</h5>
-            <p class="text-xs text-slate-300 leading-relaxed italic">
-              « Je vends des mèches à Ganhi. Dès que j'ai branché le micro sans fil sur mon iPhone, le bruit des klaxons et motos a été filtré. Mes clientes entendent ma voix à 100%. Livraison en 2h chrono par zémidjan. »
-            </p>
+        <!-- Product Card 3 -->
+        <div class="glass-card glass-card-hover rounded-xl overflow-hidden group">
+          <div class="relative product-image-overlay aspect-square bg-slate-800">
+            <img src="https://via.placeholder.com/300" alt="Produit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+
+            <button class="absolute top-2 right-2 w-8 h-8 bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/60 transition-colors" aria-label="Ajouter aux favoris">
+              <i class="far fa-heart text-white text-sm"></i>
+            </button>
           </div>
-          <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
-            <div>
-              <span class="font-bold text-white block">Syntiche A.</span>
-              <span class="text-[11px] text-slate-400">Ganhi, Cotonou</span>
+
+          <div class="p-3">
+            <h4 class="font-semibold text-sm mb-1 line-clamp-2 group-hover:text-primary-500 transition-colors">Samsung Galaxy S24 Ultra 512GB</h4>
+
+            <div class="flex items-center gap-1 text-xs text-slate-400 mb-2">
+              <i class="fas fa-location-dot text-[10px]"></i>
+              <span>Porto-Novo</span>
+              <span>•</span>
+              <span>1j</span>
             </div>
-            <span class="text-emerald-400 text-[10px] font-bold"><i class="fa-solid fa-circle-check"></i> Commande reçue</span>
+
+            <div class="flex items-center justify-between">
+              <span class="text-lg font-bold gradient-text">425,000<span class="text-xs ml-0.5">F</span></span>
+
+              <div class="flex items-center gap-2 text-xs text-slate-400">
+                <span class="flex items-center gap-1">
+                  <i class="far fa-heart text-[10px]"></i>
+                  8
+                </span>
+                <span class="flex items-center gap-1">
+                  <i class="far fa-eye text-[10px]"></i>
+                  156
+                </span>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- Product Card 4 -->
+        <div class="glass-card glass-card-hover rounded-xl overflow-hidden group">
+          <div class="relative product-image-overlay aspect-square bg-slate-800">
+            <img src="https://via.placeholder.com/300" alt="Produit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+
+            <div class="absolute top-2 left-2">
+              <span class="badge-new">Neuf</span>
+            </div>
+
+            <button class="absolute top-2 right-2 w-8 h-8 bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/60 transition-colors" aria-label="Ajouter aux favoris">
+              <i class="far fa-heart text-white text-sm"></i>
+            </button>
+          </div>
+
+          <div class="p-3">
+            <h4 class="font-semibold text-sm mb-1 line-clamp-2 group-hover:text-primary-500 transition-colors">PlayStation 5 + 2 Manettes</h4>
+
+            <div class="flex items-center gap-1 text-xs text-slate-400 mb-2">
+              <i class="fas fa-location-dot text-[10px]"></i>
+              <span>Cotonou</span>
+              <span>•</span>
+              <span>3h</span>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <span class="text-lg font-bold gradient-text">285,000<span class="text-xs ml-0.5">F</span></span>
+
+              <div class="flex items-center gap-2 text-xs text-slate-400">
+                <span class="flex items-center gap-1">
+                  <i class="far fa-heart text-[10px]"></i>
+                  45
+                </span>
+                <span class="flex items-center gap-1">
+                  <i class="far fa-eye text-[10px]"></i>
+                  892
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 5 -->
+        <div class="glass-card glass-card-hover rounded-xl overflow-hidden group">
+          <div class="relative product-image-overlay aspect-square bg-slate-800">
+            <img src="https://via.placeholder.com/300" alt="Produit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+
+            <button class="absolute top-2 right-2 w-8 h-8 bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/60 transition-colors" aria-label="Ajouter aux favoris">
+              <i class="far fa-heart text-white text-sm"></i>
+            </button>
+          </div>
+
+          <div class="p-3">
+            <h4 class="font-semibold text-sm mb-1 line-clamp-2 group-hover:text-primary-500 transition-colors">MacBook Air M2 13" 8GB 256GB</h4>
+
+            <div class="flex items-center gap-1 text-xs text-slate-400 mb-2">
+              <i class="fas fa-location-dot text-[10px]"></i>
+              <span>Cotonou</span>
+              <span>•</span>
+              <span>6h</span>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <span class="text-lg font-bold gradient-text">485,000<span class="text-xs ml-0.5">F</span></span>
+
+              <div class="flex items-center gap-2 text-xs text-slate-400">
+                <span class="flex items-center gap-1">
+                  <i class="far fa-heart text-[10px]"></i>
+                  19
+                </span>
+                <span class="flex items-center gap-1">
+                  <i class="far fa-eye text-[10px]"></i>
+                  345
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
+
+      <!-- Load More Button -->
+      <div class="text-center mt-8">
+        <button class="btn-primary px-8 py-3 rounded-xl font-semibold inline-flex items-center gap-2">
+          <span>Voir plus d'annonces</span>
+          <i class="fas fa-arrow-right text-sm"></i>
+        </button>
+      </div>
+
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black text-slate-400 text-xs py-14 border-t border-white/10 relative z-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-        <div>
-          <div class="flex items-center gap-2.5 mb-3">
-            <div class="w-8 h-8 rounded-xl bg-bjGreen text-white flex items-center justify-center font-display font-black">BE</div>
-            <span class="text-lg font-display font-black text-white">BE-MARKET BÉNIN</span>
+  <footer class="relative mt-20 border-t border-white/5">
+    <div class="glass-card rounded-t-3xl">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+
+          <!-- About -->
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center">
+                <i class="fas fa-store text-white text-sm"></i>
+              </div>
+              <span class="font-display font-bold text-lg gradient-text">BeMarket</span>
+            </div>
+            <p class="text-sm text-slate-400 mb-4">
+              Marketplace #1 au Bénin pour acheter et vendre en ligne. Des milliers de produits disponibles.
+            </p>
+            <div class="flex items-center gap-3">
+              <a href="#" class="w-9 h-9 rounded-lg glass-card flex items-center justify-center hover:border-primary-500/40 transition-colors" aria-label="Facebook">
+                <i class="fab fa-facebook-f text-sm"></i>
+              </a>
+              <a href="#" class="w-9 h-9 rounded-lg glass-card flex items-center justify-center hover:border-primary-500/40 transition-colors" aria-label="Instagram">
+                <i class="fab fa-instagram text-sm"></i>
+              </a>
+              <a href="#" class="w-9 h-9 rounded-lg glass-card flex items-center justify-center hover:border-primary-500/40 transition-colors" aria-label="Twitter">
+                <i class="fab fa-twitter text-sm"></i>
+              </a>
+              <a href="https://wa.me/22901990011" class="w-9 h-9 rounded-lg glass-card flex items-center justify-center hover:border-primary-500/40 transition-colors" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp text-sm"></i>
+              </a>
+            </div>
           </div>
-          <p class="text-slate-400 leading-relaxed mb-4 text-xs">
-            La plateforme e-commerce d'équipements pratiques et solutions concrètes pour le Bénin. Produits testés, packs bonus et commande directe par WhatsApp.
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="font-semibold mb-4">Liens rapides</h4>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li><a href="#" class="hover:text-primary-500 transition-colors">Catégories</a></li>
+              <li><a href="#" class="hover:text-primary-500 transition-colors">Comment ça marche</a></li>
+              <li><a href="#" class="hover:text-primary-500 transition-colors">Publier une annonce</a></li>
+              <li><a href="#" class="hover:text-primary-500 transition-colors">Règles de sécurité</a></li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div>
+            <h4 class="font-semibold mb-4">Support</h4>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li><a href="#" class="hover:text-primary-500 transition-colors">Centre d'aide</a></li>
+              <li><a href="#" class="hover:text-primary-500 transition-colors">Nous contacter</a></li>
+              <li><a href="#" class="hover:text-primary-500 transition-colors">Signaler un problème</a></li>
+              <li><a href="#" class="hover:text-primary-500 transition-colors">FAQ</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h4 class="font-semibold mb-4">Contact</h4>
+            <ul class="space-y-3 text-sm text-slate-400">
+              <li class="flex items-start gap-2">
+                <i class="fas fa-phone text-primary-500 mt-0.5"></i>
+                <a href="tel:+22901990011" class="hover:text-primary-500 transition-colors">+229 01 99 00 11</a>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-envelope text-primary-500 mt-0.5"></i>
+                <a href="mailto:contact@bemarket.bj" class="hover:text-primary-500 transition-colors">contact@bemarket.bj</a>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-location-dot text-primary-500 mt-0.5"></i>
+                <span>Cotonou, Bénin</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p class="text-sm text-slate-400">
+            © 2026 BeMarket Bénin. Tous droits réservés.
           </p>
-          <div class="flex items-center gap-2">
-            <span class="w-3 h-3 rounded-full bg-bjGreen"></span>
-            <span class="w-3 h-3 rounded-full bg-bjYellow"></span>
-            <span class="w-3 h-3 rounded-full bg-bjRed"></span>
-            <span class="text-[11px] text-slate-300 ml-1 font-bold">Fier d'innover au Bénin</span>
+          <div class="flex items-center gap-6 text-sm text-slate-400">
+            <a href="#" class="hover:text-primary-500 transition-colors">Conditions d'utilisation</a>
+            <a href="#" class="hover:text-primary-500 transition-colors">Politique de confidentialité</a>
           </div>
         </div>
 
-        <div>
-          <h4 class="text-white font-bold uppercase tracking-wider mb-3">Les 6 Catégories</h4>
-          <ul class="space-y-2 text-xs">
-            <li><button onclick="filterCategory('car')" class="hover:text-emerald-400 transition">🚗 Car Care & Detailing</button></li>
-            <li><button onclick="filterCategory('hair')" class="hover:text-emerald-400 transition">💇🏾‍♀️ Afro Hair Care</button></li>
-            <li><button onclick="filterCategory('home-def')" class="hover:text-emerald-400 transition">🦟 Home Defense Anti-Insectes</button></li>
-            <li><button onclick="filterCategory('sneaker')" class="hover:text-emerald-400 transition">👟 Sneaker & Shoe Care</button></li>
-            <li><button onclick="filterCategory('home-clean')" class="hover:text-emerald-400 transition">🧹 Home Clean Textiles</button></li>
-            <li><button onclick="filterCategory('creator')" class="hover:text-emerald-400 transition">🎥 Creator Gear Studio</button></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-white font-bold uppercase tracking-wider mb-3">Règlement & Livraisons</h4>
-          <ul class="space-y-2 text-xs">
-            <li><i class="fa-solid fa-truck text-emerald-400 mr-1.5"></i> Cotonou & Calavi : 24h Chrono</li>
-            <li><i class="fa-solid fa-box text-yellow-400 mr-1.5"></i> Porto-Novo & Ouidah : 24h-48h</li>
-            <li><i class="fa-solid fa-bus text-blue-400 mr-1.5"></i> Parakou, Bohicon : Colis Bus sécurisé</li>
-            <li><i class="fa-solid fa-money-bill-wave text-green-400 mr-1.5"></i> Cash & Mobile Money à la porte</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-white font-bold uppercase tracking-wider mb-3">Service WhatsApp 7j/7</h4>
-          <p class="mb-3 text-xs text-slate-300">Besoin d'aide pour choisir un produit ou composer votre pack ?</p>
-          <a href="https://wa.me/22901990011?text=Bonjour%20BE-MARKET,%20j'ai%20besoin%20d'aide%20pour%20choisir%20mes%20produits" target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition shadow-lg">
-            <i class="fa-brands fa-whatsapp text-sm"></i>
-            <span>Discuter avec un conseiller</span>
-          </a>
-          <p class="text-[10px] text-slate-500 mt-2">Réponse moyenne en moins de 5 minutes.</p>
-        </div>
-      </div>
-
-      <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
-        <div>&copy; 2026 BE-MARKET Bénin. Tous droits réservés.</div>
-        <div class="flex items-center gap-4">
-          <a href="#" class="hover:text-white">Conditions Générales</a>
-          <a href="#" class="hover:text-white">Confidentialité</a>
-          <a href="#" class="hover:text-white">Garantie & Retours</a>
-        </div>
       </div>
     </div>
   </footer>
 
-  <!-- Product Detail Modal -->
-  <div id="productModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/80 backdrop-blur-md transition-opacity">
-    <div class="min-h-full flex items-center justify-center p-4">
-      <div class="bg-slate-900 border border-white/15 rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl animate-in fade-in zoom-in-95 duration-200">
-        <button onclick="closeProductModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white w-8 h-8 rounded-full flex items-center justify-center bg-white/10 transition">
-          <i class="fa-solid fa-xmark text-sm"></i>
-        </button>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-          <div class="relative aspect-square rounded-2xl overflow-hidden bg-slate-950 border border-white/10">
-            <img id="modalProductImg" src="" alt="Image produit" class="w-full h-full object-cover">
-            <span id="modalProductBadge" class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-black/70 backdrop-blur-md text-yellow-300 border border-white/10">
-              Badge
-            </span>
-          </div>
-
-          <div>
-            <span id="modalProductCategory" class="text-[10px] font-black uppercase text-emerald-400 tracking-wider block mb-1">Catégorie</span>
-            <h3 id="modalProductTitle" class="text-lg sm:text-xl font-display font-black text-white leading-tight mb-2">Titre du produit</h3>
-            <div class="text-2xl font-display font-black text-white mb-3" id="modalProductPrice">0 FCFA</div>
-
-            <div class="p-3 rounded-2xl bg-emerald-950/40 border border-emerald-500/20 mb-4">
-              <span class="text-[10px] font-black uppercase text-emerald-400 block mb-1">
-                <i class="fa-solid fa-location-dot mr-1"></i> Pourquoi c'est utile au Bénin :
-              </span>
-              <p id="modalProductBeninUse" class="text-xs text-slate-300 leading-relaxed"></p>
-            </div>
-
-            <div class="space-y-1.5 mb-5 text-xs text-slate-300">
-              <div class="flex items-center gap-2">
-                <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
-                <span id="modalProductSpec1"></span>
-              </div>
-              <div class="flex items-center gap-2">
-                <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
-                <span id="modalProductSpec2"></span>
-              </div>
-            </div>
-
-            <!-- Gemini AI Audio TTS trigger -->
-            <div class="mb-4 p-3 rounded-2xl bg-slate-950/80 border border-emerald-500/30 flex items-center justify-between gap-3">
-              <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                  <i class="fa-solid fa-volume-high text-xs" id="ttsAudioIcon"></i>
-                </div>
-                <div>
-                  <span class="text-[10px] font-black uppercase text-emerald-400 block">Conseil Vocal IA Bénin</span>
-                  <span class="text-[11px] text-slate-300" id="ttsAudioStatusText">Écouter la recommandation audio</span>
-                </div>
-              </div>
-              <button 
-                id="modalBtnPlayTts"
-                onclick="handleProductTtsAudio()" 
-                class="px-3 py-1.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black transition flex items-center gap-1.5 shadow">
-                <i class="fa-solid fa-play text-[10px]" id="ttsBtnIcon"></i>
-                <span id="ttsBtnLabel">Écouter</span>
-              </button>
-            </div>
-
-            <!-- Action buttons -->
-            <div class="flex flex-col gap-2.5">
-              <button 
-                id="modalBtnAddToPack" 
-                onclick="handleModalAddToPack()" 
-                class="w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-slate-950 font-black text-xs transition flex items-center justify-center gap-2 shadow-md">
-                <i class="fa-solid fa-gift"></i>
-                <span>Ajouter au Pack Bonus (-15% à -25%)</span>
-              </button>
-
-              <button 
-                id="modalBtnOrderSolo" 
-                onclick="handleModalOrderSoloWhatsApp()" 
-                class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs transition flex items-center justify-center gap-2">
-                <i class="fa-brands fa-whatsapp text-base"></i>
-                <span>Commander seul sur WhatsApp</span>
-              </button>
-            </div>
-          </div>
+  <!-- Mobile Bottom Navigation -->
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 glass-card border-t border-white/10 pb-safe">
+    <div class="flex items-center justify-around py-3">
+      <a href="/" class="flex flex-col items-center gap-1 text-primary-500" aria-label="Accueil">
+        <i class="fas fa-home text-xl"></i>
+        <span class="text-[10px] font-medium">Accueil</span>
+      </a>
+      <a href="#" class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary-500 transition-colors" aria-label="Rechercher">
+        <i class="fas fa-search text-xl"></i>
+        <span class="text-[10px] font-medium">Rechercher</span>
+      </a>
+      <button class="relative -mt-6 w-14 h-14 rounded-full btn-primary flex items-center justify-center shadow-lg shadow-primary-500/30" aria-label="Vendre">
+        <i class="fas fa-plus text-xl text-white"></i>
+      </button>
+      <a href="#" class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary-500 transition-colors" aria-label="Favoris">
+        <div class="relative">
+          <i class="far fa-heart text-xl"></i>
+          <span class="absolute -top-1 -right-1 w-4 h-4 bg-primary-500 rounded-full text-[9px] font-bold flex items-center justify-center">3</span>
         </div>
-      </div>
+        <span class="text-[10px] font-medium">Favoris</span>
+      </a>
+      <a href="#" class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary-500 transition-colors" aria-label="Profil">
+        <i class="far fa-user text-xl"></i>
+        <span class="text-[10px] font-medium">Profil</span>
+      </a>
     </div>
-  </div>
+  </nav>
 
-  <!-- Shopping Cart Drawer -->
-  <div id="cartDrawer" class="fixed inset-0 z-50 pointer-events-none transition-all duration-300">
-    <div id="cartOverlay" onclick="toggleCartDrawer()" class="absolute inset-0 bg-black/70 backdrop-blur-xs opacity-0 transition-opacity duration-300 pointer-events-none"></div>
-    <div id="cartPanel" class="absolute top-0 right-0 w-full max-w-md h-full bg-[#0a0f1d] border-l border-white/10 shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 pointer-events-auto">
-      <div class="p-5 border-b border-white/10 flex items-center justify-between">
-        <div class="flex items-center gap-2.5">
-          <div class="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-sm font-black">
-            <i class="fa-solid fa-bag-shopping"></i>
-          </div>
-          <div>
-            <h3 class="font-display font-black text-sm text-white">Mon Panier BE-MARKET</h3>
-            <span class="text-[11px] text-slate-400" id="cartDrawerCountText">0 article</span>
-          </div>
-        </div>
-        <button onclick="toggleCartDrawer()" class="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-white bg-white/5">
-          <i class="fa-solid fa-xmark text-sm"></i>
-        </button>
-      </div>
-
-      <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-5 space-y-3"></div>
-
-      <div class="p-5 border-t border-white/10 bg-slate-950/80 space-y-3">
-        <div class="flex justify-between text-xs text-slate-400">
-          <span>Sous-total articles</span>
-          <span id="cartSubtotalText" class="font-bold text-white">0 FCFA</span>
-        </div>
-        <div class="flex justify-between text-xs text-slate-400">
-          <span>Livraison estimée (<span id="cartDeliveryCityName">Cotonou</span>)</span>
-          <span class="text-emerald-400 font-bold" id="cartDeliveryPriceText">1 500 FCFA</span>
-        </div>
-        <div class="flex justify-between text-base font-display font-black text-white pt-2 border-t border-white/10">
-          <span>Total TTC</span>
-          <span id="cartTotalText" class="text-emerald-400 text-lg">0 FCFA</span>
-        </div>
-
-        <button onclick="checkoutCartViaWhatsApp()" class="w-full py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs shadow-lg transition active:scale-95 flex items-center justify-center gap-2">
-          <i class="fa-brands fa-whatsapp text-lg"></i>
-          <span>Commander tout le panier sur WhatsApp</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- WhatsApp Floating Bubble -->
-  <div class="fixed bottom-6 right-6 z-40 flex items-center gap-2">
-    <button 
-      onclick="openGeminiModal('pack')" 
-      title="Ouvrir l'assistant intelligent Gemini"
-      class="h-14 px-4 rounded-full bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-500 text-white flex items-center gap-2.5 shadow-xl shadow-emerald-950/60 hover:scale-105 active:scale-95 transition-all border border-white/20">
-      <i class="fa-solid fa-wand-magic-sparkles text-lg animate-pulse"></i>
-      <span class="text-xs font-black hidden sm:inline">IA BE-MARKET</span>
-    </button>
-
-    <a 
-      href="https://wa.me/22901990011?text=Bonjour%20BE-MARKET,%20je%20souhaite%20commander%20un%20produit" 
-      target="_blank" 
-      class="w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center text-2xl shadow-xl shadow-emerald-500/40 hover:scale-110 active:scale-95 transition-all">
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
-  </div>
-
-  <!-- GEMINI AI ASSISTANT MODAL -->
-  <div id="geminiAiModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/85 backdrop-blur-md transition-opacity">
-    <div class="min-h-full flex items-center justify-center p-3 sm:p-5">
-      <div class="bg-[#0b1220] border border-emerald-500/30 rounded-3xl max-w-3xl w-full p-5 sm:p-7 relative shadow-2xl animate-in fade-in zoom-in-95 duration-200">
-        <button onclick="closeGeminiModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white w-8 h-8 rounded-full flex items-center justify-center bg-white/10 transition">
-          <i class="fa-solid fa-xmark text-sm"></i>
-        </button>
-
-        <div class="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
-          <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-emerald-500 via-teal-400 to-amber-300 flex items-center justify-center text-slate-950 font-black shadow-lg">
-            <i class="fa-solid fa-brain text-xl"></i>
-          </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <h3 class="font-display font-black text-lg sm:text-xl text-white">Assistant Intelligent Gemini</h3>
-              <span class="px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                gemini-3-flash
-              </span>
-            </div>
-            <p class="text-xs text-slate-400">Composez vos Packs Bonus par IA, écoutez les conseils audio et générez des simulations visuelles.</p>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-2 mb-6 border-b border-white/10 pb-3 overflow-x-auto no-scrollbar">
-          <button id="geminiTabBtnPack" onclick="switchGeminiTab('pack')" class="px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-2 bg-emerald-600 text-white shadow">
-            <i class="fa-solid fa-wand-magic-sparkles text-xs"></i>
-            <span>Architecte de Pack Bonus (-25%)</span>
-          </button>
-          <button id="geminiTabBtnImage" onclick="switchGeminiTab('image')" class="px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-2 bg-white/5 text-slate-400 hover:text-white">
-            <i class="fa-solid fa-image text-xs"></i>
-            <span>Simulateur Visuel IA</span>
-          </button>
-        </div>
-
-        <div id="geminiTabPackContent" class="space-y-5">
-          <div class="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-3">
-            <label class="block text-xs font-black text-slate-200">
-              Décrivez votre situation ou votre besoin au Bénin :
-            </label>
-            <div class="relative">
-              <textarea 
-                id="geminiPackPrompt" 
-                rows="3" 
-                placeholder="Exemple: Je roule en voiture entre Cotonou et Calavi, j'ai des enfants à la maison et je fais des vidéos pour ma boutique de mèches. Quel pack de 4 ou 5 produits me conseilles-tu ?"
-                class="w-full bg-slate-900 border border-white/15 rounded-2xl p-3.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition leading-relaxed"></textarea>
-            </div>
-
-            <div class="flex flex-wrap items-center gap-1.5 pt-1">
-              <span class="text-[10px] text-slate-400 uppercase font-black mr-1">Profils rapides :</span>
-              <button onclick="setPackPromptPreset('Chauffeur & Propriétaire Auto : poussière d\\'harmattan à Cotonou et jantes')" class="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-[11px] text-slate-300 border border-white/10 transition">🚗 Chauffeur Cotonou</button>
-              <button onclick="setPackPromptPreset('Maison paisible à Calavi : zéro moustiques, canapé propre et draps frais')" class="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-[11px] text-slate-300 border border-white/10 transition">🦟 Famille Calavi</button>
-              <button onclick="setPackPromptPreset('Créatrice de contenu TikTok et beauté afro : son studio et cheveux soignés')" class="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-[11px] text-slate-300 border border-white/10 transition">🎥 Créatrice TikTok</button>
-              <button onclick="setPackPromptPreset('Jeune urbain : baskets blanches propres face à la latérite et style impeccable')" class="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-[11px] text-slate-300 border border-white/10 transition">👟 Passionné Sneakers</button>
-            </div>
-
-            <div class="pt-2 flex justify-end">
-              <button 
-                id="btnGeneratePack"
-                onclick="generatePackBonusWithGemini()" 
-                class="px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 hover:brightness-110 text-slate-950 font-black text-xs transition flex items-center gap-2 shadow-lg">
-                <i class="fa-solid fa-sparkles text-xs"></i>
-                <span>Générer mon Pack sur Mesure</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="geminiPackResultBox" class="hidden p-5 rounded-2xl bg-emerald-950/20 border border-emerald-500/30 space-y-4">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 dot-pulse"></span>
-                <h4 id="geminiPackResultTitle" class="font-display font-black text-sm text-white">Recommandation personnalisée</h4>
-              </div>
-              <span id="geminiPackSavingsPill" class="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-yellow-500/20 text-yellow-300 border border-yellow-500/30">
-                -25% DE REMISE
-              </span>
-            </div>
-
-            <p id="geminiPackExplanation" class="text-xs text-slate-300 leading-relaxed italic"></p>
-            <div id="geminiPackCardsContainer" class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2"></div>
-
-            <div class="pt-3 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
-              <div class="text-xs">
-                <span class="text-slate-400 block">Total estimé après remise :</span>
-                <span class="text-base font-display font-black text-emerald-400" id="geminiPackFinalEstPrice">0 FCFA</span>
-              </div>
-              <button 
-                id="btnApplyAiPack"
-                onclick="applyGeminiPackToBuilder()" 
-                class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-slate-950 font-black text-xs transition flex items-center justify-center gap-2 shadow-md">
-                <i class="fa-solid fa-check-double"></i>
-                <span>Charger directement dans mon Pack Bonus</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div id="geminiTabImageContent" class="hidden space-y-5">
-          <div class="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-3">
-            <label class="block text-xs font-black text-slate-200">
-              Générer une mise en situation visuelle d'un produit (Gemini 3.1 Flash Image) :
-            </label>
-            <div class="flex gap-2">
-              <input 
-                type="text" 
-                id="geminiImagePrompt" 
-                placeholder="Ex: Une paire de baskets blanches impeccablement nettoyée posée sur le carrelage d'un salon moderne à Cotonou"
-                class="flex-1 bg-slate-900 border border-white/15 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500">
-              <button 
-                id="btnGenerateImage"
-                onclick="generateProductImageWithGemini()" 
-                class="px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition flex items-center gap-2 shrink-0">
-                <i class="fa-solid fa-image text-xs"></i>
-                <span>Générer</span>
-              </button>
-            </div>
-
-            <div class="flex flex-wrap items-center gap-1.5 pt-1">
-              <span class="text-[10px] text-slate-400 uppercase font-black mr-1">Idées d'images :</span>
-              <button onclick="setImagePromptPreset('Tableau de bord de SUV luxueux rénové et ultra brillant sans poussière à Cotonou')" class="px-2 py-0.5 rounded-md bg-slate-900 text-[10px] text-slate-300 border border-white/10">Tableau de bord auto</button>
-              <button onclick="setImagePromptPreset('Micro cravate sans fil clipsé sur le col d\\'une jeune femme souriante qui filme avec son smartphone à Cadjehoun')" class="px-2 py-0.5 rounded-md bg-slate-900 text-[10px] text-slate-300 border border-white/10">Studio TikTok Cotonou</button>
-              <button onclick="setImagePromptPreset('Lampe UV anti-moustique élégante diffusant une lueur douce dans une chambre moderne à Calavi')" class="px-2 py-0.5 rounded-md bg-slate-900 text-[10px] text-slate-300 border border-white/10">Chambre nuit sereine</button>
-            </div>
-          </div>
-
-          <div id="geminiImageResultContainer" class="hidden p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col items-center">
-            <div class="relative max-w-md w-full aspect-square rounded-2xl overflow-hidden bg-slate-950 border border-white/10 shadow-lg">
-              <img id="geminiGeneratedImg" src="" alt="Image générée par Gemini" class="w-full h-full object-cover">
-              <span class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded-md text-[9px] font-black uppercase tracking-wider bg-black/70 backdrop-blur-md text-emerald-400 border border-white/10">
-                Généré par Gemini 3.1 Flash Image
-              </span>
-            </div>
-            <p id="geminiGeneratedImgCaption" class="text-xs text-slate-300 mt-3 text-center italic"></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Toast Notification Alert -->
-  <div id="toastBox" class="fixed bottom-6 left-6 z-50 transform -translate-y-24 opacity-0 transition-all duration-300 flex items-center gap-3 px-4 py-3 rounded-2xl bg-slate-900 border border-white/15 text-white shadow-2xl text-xs font-bold pointer-events-none">
-    <div id="toastIcon" class="w-5 h-5 rounded-full bg-bjGreen text-white flex items-center justify-center text-[10px]">✓</div>
-    <span id="toastMsg">Action effectuée</span>
-  </div>
-
+  <!-- JavaScript -->
   <script>
-    // All 24 Individual Products across 6 categories
-    const PRODUCTS_DATA = [
-      // 🚗 1. CAR CARE
-      {
-        id: "prod-car-1",
-        category: "car",
-        categoryName: "🚗 Car Care",
-        title: "Microfibre Detailing Ultra-Épaisse 600 GSM",
-        badge: "Anti-Poussière",
-        price: 3500,
-        image: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Indispensable pour essuyer la poussière de l'harmattan sans faire de micro-rayures sur la peinture.",
-        spec1: "Densité 600 GSM ultra-absorbante double face",
-        spec2: "Bords cousus satin anti-griffures",
-        videoPreview: {
-          tag: "🚗 Car Care Detailing",
-          title: "Nettoyage sans micro-rayures sur poussière sèche à Cotonou",
-          thumb: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=800&q=80"
+    // Fade-in animation on scroll
+    const fadeInObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
         }
-      },
-      {
-        id: "prod-car-2",
-        category: "car",
-        categoryName: "🚗 Car Care",
-        title: "Pinceau & Brosse Jantes & Aérations",
-        badge: "Accès Difficiles",
-        price: 4000,
-        image: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Déloge le sable accumulé dans les buses de climatisation et les écrous de jantes.",
-        spec1: "Poils soyeux haute résistance résistants aux produits chimiques",
-        spec2: "Manche ergonomique antidérapant sans métal"
-      },
-      {
-        id: "prod-car-3",
-        category: "car",
-        categoryName: "🚗 Car Care",
-        title: "Rénovateur Plastiques & Tableau de Bord 250ml",
-        badge: "Effet Brillant & Anti-UV",
-        price: 6500,
-        image: "https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Protège les plastiques intérieurs du soleil brûlant et empêche la poussière de coller.",
-        spec1: "Formule antistatique longue durée satinée sans traces",
-        spec2: "Applicateur éponge haute densité inclus"
-      },
-      {
-        id: "prod-car-4",
-        category: "car",
-        categoryName: "🚗 Car Care",
-        title: "Spray Nettoyant Vitres Anti-Buée & Pluie",
-        badge: "Clarté Maximale",
-        price: 5000,
-        image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Visibilité nette lors des fortes averses tropicales sur le boulevard de la Marina.",
-        spec1: "Barrière hydrophobe déperlante",
-        spec2: "Formule sans ammoniaque sécurisée pour vitres teintées"
-      },
-
-      // 💇🏾‍♀️ 2. AFRO HAIR CARE
-      {
-        id: "prod-hair-1",
-        category: "hair",
-        categoryName: "💇🏾‍♀️ Afro Hair Care",
-        title: "Bonnet en Satin Double Épaisseur Ajustable",
-        badge: "Nuit Sereine",
-        price: 4500,
-        image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Préserve l'hydratation des cheveux crépus et bouclés contre le frottement asséchant de l'oreiller.",
-        spec1: "Satin soyeux premium réversible hypoallergénique",
-        spec2: "Large élastique doux sans serrer le front",
-        videoPreview: {
-          tag: "💇🏾‍♀️ Afro Hair Care",
-          title: "Conservation de l'hydratation et zéro casse au réveil",
-          thumb: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80"
-        }
-      },
-      {
-        id: "prod-hair-2",
-        category: "hair",
-        categoryName: "💇🏾‍♀️ Afro Hair Care",
-        title: "Vaporisateur Brume Continue 360° (300ml)",
-        badge: "Hydratation Parfaite",
-        price: 5000,
-        image: "https://images.unsplash.com/photo-1584297091622-af8e5fd85dc8?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Diffuse une brume ultra-fine continue pour humidifier les nattes et vanilles sans les tremper.",
-        spec1: "Pulvérisation prolongée continue en 1 seule pression",
-        spec2: "Fonctionne sous tous les angles même tête en bas"
-      },
-      {
-        id: "prod-hair-3",
-        category: "hair",
-        categoryName: "💇🏾‍♀️ Afro Hair Care",
-        title: "Brosse Démêlante Souple Incurvée Anti-Casse",
-        badge: "Démêlage Facile",
-        price: 4000,
-        image: "https://images.unsplash.com/photo-1590159763121-7c9ff3149e07?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Glisse à travers les nœuds des cheveux 4C sans douleur ni arrachement.",
-        spec1: "Rangées de picots flexibles avec espacement ajustable",
-        spec2: "Poignée ergonomique en caoutchouc antidérapante"
-      },
-      {
-        id: "prod-hair-4",
-        category: "hair",
-        categoryName: "💇🏾‍♀️ Afro Hair Care",
-        title: "Peigne à Tige Métallique Traçage Précis",
-        badge: "Finition Coiffure",
-        price: 2500,
-        image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Idéal pour réaliser des raies nettes et régulières lors du tressage traditionnel.",
-        spec1: "Tige en acier inoxydable antistatique ultra-fine",
-        spec2: "Résiste à la chaleur des fers à lisser"
-      },
-
-      // 🦟 3. HOME DEFENSE
-      {
-        id: "prod-home-1",
-        category: "home-def",
-        categoryName: "🦟 Home Defense",
-        title: "Lampe UV Piège Moustiques Photocatalytique",
-        badge: "Nuits Calmes",
-        price: 9500,
-        image: "https://images.unsplash.com/photo-1584697964190-705b89368d65?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Attire et aspire silencieusement les moustiques vecteurs du paludisme dans les chambres.",
-        spec1: "Longueur d'onde 365nm silencieuse < 25dB",
-        spec2: "Alimentation USB standard compatible powerbank",
-        videoPreview: {
-          tag: "🦟 Home Defense",
-          title: "Piège silencieux nocturne sans odeur toxique à Calavi",
-          thumb: "https://images.unsplash.com/photo-1584697964190-705b89368d65?auto=format&fit=crop&w=800&q=80"
-        }
-      },
-      {
-        id: "prod-home-2",
-        category: "home-def",
-        categoryName: "🦟 Home Defense",
-        title: "Raquette Électrique Pliable avec Socle USB",
-        badge: "Foudroyant",
-        price: 8500,
-        image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Neutralise immédiatement tout insecte au vol dans le salon ou sur la véranda.",
-        spec1: "Grille de sécurité triple couche anti-contact accidentel",
-        spec2: "Socle de pose automatique avec lumière UV d'attraction"
-      },
-      {
-        id: "prod-home-3",
-        category: "home-def",
-        categoryName: "🦟 Home Defense",
-        title: "Huile Essentielle Citronnelle Pure Bio 50ml",
-        badge: "100% Naturel",
-        price: 4500,
-        image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Répulsif végétal sain pour les enfants à diffuser ou appliquer dilué sur les chevilles.",
-        spec1: "Concentré 100% pur de Cymbopogon Winterianus",
-        spec2: "Parfum frais et vivifiant anti-insectes"
-      },
-      {
-        id: "prod-home-4",
-        category: "home-def",
-        categoryName: "🦟 Home Defense",
-        title: "Prise Diffuseur Électrique Répulsif Ultrasons",
-        badge: "Protection 24h",
-        price: 6000,
-        image: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Éloigne moustiques, cafards et rongeurs en continu sans aucune recharge chimique.",
-        spec1: "Fréquence variable inaudible pour humains et animaux",
-        spec2: "Faible consommation énergétique 3W"
-      },
-
-      // 👟 4. SNEAKER & SHOE CARE
-      {
-        id: "prod-snk-1",
-        category: "sneaker",
-        categoryName: "👟 Sneaker Care",
-        title: "Mousse Nettoyante Active Instantanée 200ml",
-        badge: "Sans Rinçage",
-        price: 5500,
-        image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Élimine les traces de boue et terre rouge des trottoirs sur les paires de baskets blanches.",
-        spec1: "Formule moussante enzymatique à séchage rapide",
-        spec2: "Compatible cuir, toile, mesh, nubuck et semelles",
-        videoPreview: {
-          tag: "👟 Sneaker & Shoe Care",
-          title: "Détachage express terre rouge sur baskets blanches",
-          thumb: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80"
-        }
-      },
-      {
-        id: "prod-snk-2",
-        category: "sneaker",
-        categoryName: "👟 Sneaker Care",
-        title: "Brosse Premium Crin & Poils Semi-Durs",
-        badge: "Finition Soignée",
-        price: 3500,
-        image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Frotte efficacement les semelles sans rayer le cuir ou effilocher les coutures.",
-        spec1: "Bois massif naturel verni anti-humidité",
-        spec2: "Double densité de poils pour parties délicates et semelles"
-      },
-      {
-        id: "prod-snk-3",
-        category: "sneaker",
-        categoryName: "👟 Sneaker Care",
-        title: "Spray Imperméabilisant Anti-Latérite & Pluie",
-        badge: "Bouclier Invisible",
-        price: 6500,
-        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Crée une pellicule protectrice qui fait glisser les flaques d'eau boueuse sans tacher.",
-        spec1: "Nanotechnologie hydrofuge invisible et respirante",
-        spec2: "Protection garantie jusqu'à 4 semaines par application"
-      },
-      {
-        id: "prod-snk-4",
-        category: "sneaker",
-        categoryName: "👟 Sneaker Care",
-        title: "Feutre Stylo Blanchisseur Semelles Intermédiaires",
-        badge: "Anti-Jaunissement",
-        price: 4500,
-        image: "https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Redonne le blanc éclatant d'origine aux semelles oxydées par le soleil tropical.",
-        spec1: "Peinture acrylique souple spéciale semelle midsole",
-        spec2: "Pointe feutre biseautée de grande précision"
-      },
-
-      // 🧹 5. HOME CLEAN TEXTILES
-      {
-        id: "prod-cln-1",
-        category: "home-clean",
-        categoryName: "🧹 Home Clean",
-        title: "Raclette Métallique Ramasse-Poils & Bouloches",
-        badge: "Miraculeux",
-        price: 3500,
-        image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Retire les peluches incrustées et poils sur les canapés en tissu et matelas.",
-        spec1: "Lame en cuivre pur inusable et manche bois ergonomique",
-        spec2: "Zéro consommable ni pile requise"
-      },
-      {
-        id: "prod-cln-2",
-        category: "home-clean",
-        categoryName: "🧹 Home Clean",
-        title: "Brosse Ergonomique Détachante Canapés & Fauteuils",
-        badge: "Dépoussiérage",
-        price: 4000,
-        image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Extrait la poussière fine logée dans les tissages épais des salons traditionnels.",
-        spec1: "Poils antistatiques spéciaux tissus d'ameublement",
-        spec2: "Prise en main confortable sans fatigue"
-      },
-      {
-        id: "prod-cln-3",
-        category: "home-clean",
-        categoryName: "🧹 Home Clean",
-        title: "Mousse Détachante Assainissante Textiles 400ml",
-        badge: "Sans Auréole",
-        price: 6000,
-        image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Élimine les taches de nourriture, boissons et auréoles de transpiration sans machine.",
-        spec1: "Pouvoir nettoyant actif à évaporation rapide",
-        spec2: "Neutralise les mauvaises odeurs incrustées"
-      },
-      {
-        id: "prod-cln-4",
-        category: "home-clean",
-        categoryName: "🧹 Home Clean",
-        title: "Brume Parfumée Textile Fraîcheur Tropicale",
-        badge: "Maison Fraîche",
-        price: 4500,
-        image: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Rafraîchit instantanément rideaux, draps et coussins après aération de la maison.",
-        spec1: "Senteur coton & fleur d'oranger longue tenue",
-        spec2: "Formule sans résidus gras ni taches d'eau"
-      },
-
-      // 🎥 6. CREATOR GEAR
-      {
-        id: "prod-crt-1",
-        category: "creator",
-        categoryName: "🎥 Creator Gear",
-        title: "Micro-Cravate Sans Fil 2.4GHz Anti-Bruit",
-        badge: "Son Studio",
-        price: 13500,
-        image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Supprime les bruits de vent, klaxons et circulation pour des vidéos TikTok nettes.",
-        spec1: "Connexion instantanée Plug & Play (USB-C & Lightning)",
-        spec2: "Puce intelligente de réduction active du bruit ambiant",
-        videoPreview: {
-          tag: "🎥 Creator Gear",
-          title: "Test audio micro cravate : voix claire au carrefour Vêdoko",
-          thumb: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80"
-        }
-      },
-      {
-        id: "prod-crt-2",
-        category: "creator",
-        categoryName: "🎥 Creator Gear",
-        title: "Trépied Pliable Rotatif 360° Métallique 1m60",
-        badge: "Stabilité Totale",
-        price: 11000,
-        image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Support solide pour filmer ses présentations produits au sol ou sur table sans vaciller.",
-        spec1: "Aluminium renforcé avec pieds antidérapants",
-        spec2: "Support smartphone rotatif horizontal et vertical"
-      },
-      {
-        id: "prod-crt-3",
-        category: "creator",
-        categoryName: "🎥 Creator Gear",
-        title: "Mini Panneau LED Bicolore Rechargeable Smartphone",
-        badge: "Éclairage Pro",
-        price: 9000,
-        image: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Lumière valorisante pour filmer le soir ou en boutique sombre sans ombre portée.",
-        spec1: "Température de couleur réglable (chaud / blanc neutre)",
-        spec2: "Batterie interne rechargeable autonomie jusqu'à 3h"
-      },
-      {
-        id: "prod-crt-4",
-        category: "creator",
-        categoryName: "🎥 Creator Gear",
-        title: "Télécommande Déclencheur Sans Fil Bluetooth",
-        badge: "Mains Libres",
-        price: 3000,
-        image: "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=600&q=80",
-        beninUse: "Déclenchez vos vidéos ou photos seul à distance jusqu'à 10 mètres sans toucher l'écran.",
-        spec1: "Compatible iPhone, Samsung, Tecno, Infinix, Xiaomi",
-        spec2: "Format porte-clés ultra-compact"
-      }
-    ];
-
-    // Global Interactive State
-    let currentCategory = 'all';
-    let currentSearchTerm = '';
-    let currentSort = 'featured';
-    let userCity = 'Cotonou';
-    let cart = [];
-    let bonusPackItems = [];
-    let activeModalProduct = null;
-    let isHeroVideoPlaying = true;
-    let videoProgress = 0;
-    let videoInterval = null;
-
-    // GEMINI API INTEGRATION HELPERS
-    const GEMINI_API_KEY = "";
-    let currentTtsAudioNode = null;
-    let aiRecommendedPackProductIds = [];
-
-    async function fetchWithRetry(url, options, maxRetries = 3) {
-      let delay = 1000;
-      for (let i = 0; i < maxRetries; i++) {
-        try {
-          const response = await fetch(url, options);
-          if (response.ok) return await response.json();
-          if (response.status === 429 || response.status >= 500) {
-            await new Promise(r => setTimeout(r, delay));
-            delay *= 2;
-            continue;
-          }
-          return await response.json();
-        } catch (err) {
-          if (i === maxRetries - 1) throw err;
-          await new Promise(r => setTimeout(r, delay));
-          delay *= 2;
-        }
-      }
-      throw new Error("Gemini API call failed after multiple attempts.");
-    }
-
-    function pcmToWav(pcm16, sampleRate) {
-      const numChannels = 1;
-      const bytesPerSample = 2;
-      const blockAlign = numChannels * bytesPerSample;
-      const byteRate = sampleRate * blockAlign;
-      const dataSize = pcm16.length * bytesPerSample;
-      const buffer = new ArrayBuffer(44 + dataSize);
-      const view = new DataView(buffer);
-
-      function writeString(offset, string) {
-        for (let i = 0; i < string.length; i++) {
-          view.setUint8(offset + i, string.charCodeAt(i));
-        }
-      }
-
-      writeString(0, 'RIFF');
-      view.setUint32(4, 36 + dataSize, true);
-      writeString(8, 'WAVE');
-      writeString(12, 'fmt ');
-      view.setUint32(16, 16, true);
-      view.setUint16(20, 1, true);
-      view.setUint16(22, numChannels, true);
-      view.setUint32(24, sampleRate, true);
-      view.setUint32(28, byteRate, true);
-      view.setUint16(32, blockAlign, true);
-      view.setUint16(34, 16, true);
-      writeString(36, 'data');
-      view.setUint32(40, dataSize, true);
-
-      for (let i = 0; i < pcm16.length; i++) {
-        view.setInt16(44 + i * 2, pcm16[i], true);
-      }
-
-      return new Blob([view], { type: 'audio/wav' });
-    }
-
-    function base64ToArrayBuffer(base64) {
-      const binaryString = window.atob(base64);
-      const len = binaryString.length;
-      const bytes = new Uint8Array(len);
-      for (let i = 0; i < len; i++) {
-        bytes[i] = binaryString.charCodeAt(i);
-      }
-      return bytes.buffer;
-    }
-
-    function openGeminiModal(defaultTab = 'pack') {
-      document.getElementById('geminiAiModal').classList.remove('hidden');
-      document.body.classList.add('overflow-hidden');
-      switchGeminiTab(defaultTab);
-    }
-
-    function closeGeminiModal() {
-      document.getElementById('geminiAiModal').classList.add('hidden');
-      document.body.classList.remove('overflow-hidden');
-    }
-
-    function switchGeminiTab(tabName) {
-      const btnPack = document.getElementById('geminiTabBtnPack');
-      const btnImg = document.getElementById('geminiTabBtnImage');
-      const contentPack = document.getElementById('geminiTabPackContent');
-      const contentImg = document.getElementById('geminiTabImageContent');
-
-      if (tabName === 'pack') {
-        btnPack.className = "px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-2 bg-emerald-600 text-white shadow";
-        btnImg.className = "px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-2 bg-white/5 text-slate-400 hover:text-white";
-        contentPack.classList.remove('hidden');
-        contentImg.classList.add('hidden');
-      } else {
-        btnImg.className = "px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-2 bg-emerald-600 text-white shadow";
-        btnPack.className = "px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-2 bg-white/5 text-slate-400 hover:text-white";
-        contentImg.classList.remove('hidden');
-        contentPack.classList.add('hidden');
-      }
-    }
-
-    function setPackPromptPreset(text) {
-      document.getElementById('geminiPackPrompt').value = text;
-    }
-
-    function setImagePromptPreset(text) {
-      document.getElementById('geminiImagePrompt').value = text;
-    }
-
-    async function generatePackBonusWithGemini() {
-      const promptInput = document.getElementById('geminiPackPrompt');
-      const promptText = promptInput.value.trim();
-      const btn = document.getElementById('btnGeneratePack');
-
-      if (!promptText) {
-        showToast("Veuillez décrire vos besoins ou choisir un profil.", "warning");
-        return;
-      }
-
-      btn.disabled = true;
-      btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-xs"></i><span>Analyse par l'IA...</span>`;
-
-      const catalogMini = PRODUCTS_DATA.map(p => ({
-        id: p.id,
-        title: p.title,
-        category: p.categoryName,
-        price: p.price,
-        beninUse: p.beninUse
-      }));
-
-      const systemPrompt = `Tu es l'architecte expert en packs d'équipement chez BE-MARKET au Bénin (Cotonou, Calavi, Porto-Novo).
-L'utilisateur te fournit ses besoins ou sa profession.
-Tu dois choisir EXACTEMENT entre 3 et 5 produits parmi le catalogue fourni qui forment le pack le plus complémentaire et économique.
-Applique les réalités du climat et du quotidien au Bénin (poussière d'harmattan, moustiques, sable, soleil, déplacements zémidjan/voiture, créateurs TikTok).
-Retourne obligatoirement un objet JSON respectant le schéma demandé.`;
-
-      const userQuery = `Catalogue des 24 produits : ${JSON.stringify(catalogMini)}
-Demande du client : "${promptText}"
-Ville cible : ${userCity}. Propose le meilleur pack de 3 à 5 produits.`;
-
-      const payload = {
-        contents: [{ parts: [{ text: userQuery }] }],
-        systemInstruction: { parts: [{ text: systemPrompt }] },
-        generationConfig: {
-          responseMimeType: "application/json",
-          responseSchema: {
-            type: "OBJECT",
-            properties: {
-              packTitle: { type: "STRING" },
-              explanation: { type: "STRING" },
-              productIds: {
-                type: "ARRAY",
-                items: { type: "STRING" }
-              }
-            },
-            required: ["packTitle", "explanation", "productIds"]
-          }
-        }
-      };
-
-      try {
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${GEMINI_API_KEY}`;
-        const result = await fetchWithRetry(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-
-        const rawText = result.candidates?.[0]?.content?.parts?.[0]?.text;
-        if (!rawText) throw new Error("Réponse vide");
-
-        const parsed = JSON.parse(rawText);
-        aiRecommendedPackProductIds = parsed.productIds.filter(id => PRODUCTS_DATA.some(p => p.id === id)).slice(0, 5);
-
-        if (aiRecommendedPackProductIds.length < 3) {
-          aiRecommendedPackProductIds = ["prod-car-3", "prod-home-1", "prod-crt-1"];
-        }
-
-        renderGeminiPackRecommendation(parsed.packTitle, parsed.explanation, aiRecommendedPackProductIds);
-        showToast("Pack Bonus optimisé généré !", "success");
-      } catch (err) {
-        console.error("Gemini Pack generation error:", err);
-        aiRecommendedPackProductIds = ["prod-car-3", "prod-home-1", "prod-crt-1", "prod-snk-1"];
-        renderGeminiPackRecommendation(
-          "Pack Polyvalent Essentiel Bénin",
-          "Sélection équilibrée combinant protection de votre véhicule contre l'harmattan, sérénité sans moustiques, son clair pour vos vidéos et baskets impeccables.",
-          aiRecommendedPackProductIds
-        );
-        showToast("Pack par défaut généré avec succès.", "info");
-      } finally {
-        btn.disabled = false;
-        btn.innerHTML = `<i class="fa-solid fa-sparkles text-xs"></i><span>Générer mon Pack sur Mesure</span>`;
-      }
-    }
-
-    function renderGeminiPackRecommendation(title, explanation, productIds) {
-      const container = document.getElementById('geminiPackResultBox');
-      const titleEl = document.getElementById('geminiPackResultTitle');
-      const expEl = document.getElementById('geminiPackExplanation');
-      const cardsEl = document.getElementById('geminiPackCardsContainer');
-      const priceEl = document.getElementById('geminiPackFinalEstPrice');
-      const savingsPill = document.getElementById('geminiPackSavingsPill');
-
-      titleEl.textContent = title || "Pack Spécial Recommandé";
-      expEl.textContent = `« ${explanation} »`;
-
-      const count = productIds.length;
-      let discountRate = count === 3 ? 0.15 : count === 4 ? 0.20 : 0.25;
-      savingsPill.textContent = `-${discountRate * 100}% DE REMISE BONUS`;
-
-      const items = productIds.map(id => PRODUCTS_DATA.find(p => p.id === id)).filter(Boolean);
-      const rawTotal = items.reduce((sum, item) => sum + item.price, 0);
-      const finalEst = rawTotal - (rawTotal * discountRate);
-
-      priceEl.textContent = `${formatFCFA(finalEst)} (au lieu de ${formatFCFA(rawTotal)})`;
-
-      cardsEl.innerHTML = items.map(item => `
-        <div class="glass-card rounded-2xl p-3 border border-white/10 flex items-center gap-3">
-          <div class="w-12 h-12 rounded-xl overflow-hidden bg-slate-950 shrink-0">
-            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
-          </div>
-          <div class="min-w-0 flex-1">
-            <span class="text-[9px] font-black uppercase text-emerald-400 block">${item.categoryName}</span>
-            <h5 class="text-xs font-bold text-white truncate">${item.title}</h5>
-            <span class="text-xs font-black text-amber-300">${formatFCFA(item.price)}</span>
-          </div>
-        </div>
-      `).join('');
-
-      container.classList.remove('hidden');
-    }
-
-    function applyGeminiPackToBuilder() {
-      if (!aiRecommendedPackProductIds || aiRecommendedPackProductIds.length === 0) return;
-
-      bonusPackItems = aiRecommendedPackProductIds
-        .map(id => PRODUCTS_DATA.find(p => p.id === id))
-        .filter(Boolean)
-        .slice(0, 5);
-
-      updateBonusPackUI();
-      renderProductsGrid();
-      renderBestSellersFrame();
-
-      closeGeminiModal();
-      scrollToBonusPack();
-      showToast(`${bonusPackItems.length} articles chargés dans votre Pack Bonus !`, "success");
-    }
-
-    async function handleProductTtsAudio() {
-      if (!activeModalProduct) return;
-
-      const btn = document.getElementById('modalBtnPlayTts');
-      const label = document.getElementById('ttsBtnLabel');
-      const icon = document.getElementById('ttsBtnIcon');
-      const statusText = document.getElementById('ttsAudioStatusText');
-
-      if (currentTtsAudioNode) {
-        currentTtsAudioNode.pause();
-        currentTtsAudioNode = null;
-        label.textContent = "Écouter";
-        icon.className = "fa-solid fa-play text-[10px]";
-        statusText.textContent = "Lecture arrêtée";
-        return;
-      }
-
-      btn.disabled = true;
-      label.textContent = "Génération...";
-      icon.className = "fa-solid fa-spinner fa-spin text-[10px]";
-      statusText.textContent = "Synthèse vocale en cours avec Gemini TTS...";
-
-      const textScript = `Présente chaleureusement ce produit pour un client au Bénin à ${userCity} :
-Le ${activeModalProduct.title} de la catégorie ${activeModalProduct.categoryName}, vendu à ${formatFCFA(activeModalProduct.price)}.
-Explique en deux phrases pourquoi c'est un excellent investissement : ${activeModalProduct.beninUse}
-Conclus en rappelant le paiement à la livraison par MoMo ou espèces.`;
-
-      const payload = {
-        contents: [{ parts: [{ text: textScript }] }],
-        generationConfig: {
-          responseModalities: ["AUDIO"],
-          speechConfig: {
-            voiceConfig: { prebuiltVoiceConfig: { voiceName: "Aoede" } }
-          }
-        },
-        model: "gemini-2.5-flash-preview-tts"
-      };
-
-      try {
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${GEMINI_API_KEY}`;
-        const result = await fetchWithRetry(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-
-        const part = result?.candidates?.[0]?.content?.parts?.[0];
-        const audioData = part?.inlineData?.data;
-        const mimeType = part?.inlineData?.mimeType;
-
-        if (audioData && mimeType && mimeType.startsWith("audio/")) {
-          const sampleRateMatch = mimeType.match(/rate=(\d+)/);
-          const sampleRate = sampleRateMatch ? parseInt(sampleRateMatch[1], 10) : 24000;
-          const pcmBuffer = base64ToArrayBuffer(audioData);
-          const pcm16 = new Int16Array(pcmBuffer);
-          const wavBlob = pcmToWav(pcm16, sampleRate);
-          const audioUrl = URL.createObjectURL(wavBlob);
-
-          currentTtsAudioNode = new Audio(audioUrl);
-          currentTtsAudioNode.play();
-
-          label.textContent = "Arrêter";
-          icon.className = "fa-solid fa-stop text-[10px]";
-          statusText.textContent = "Lecture audio en cours...";
-
-          currentTtsAudioNode.onended = () => {
-            currentTtsAudioNode = null;
-            label.textContent = "Écouter";
-            icon.className = "fa-solid fa-play text-[10px]";
-            statusText.textContent = "Écoute terminée. Cliquez pour réécouter.";
-          };
-        } else {
-          throw new Error("Données audio absentes.");
-        }
-      } catch (err) {
-        console.error("Gemini TTS Error:", err);
-        statusText.textContent = "Audio indisponible momentanément.";
-        showToast("Impossible de charger la voix TTS pour le moment.", "warning");
-        label.textContent = "Écouter";
-        icon.className = "fa-solid fa-play text-[10px]";
-      } finally {
-        btn.disabled = false;
-      }
-    }
-
-    async function generateProductImageWithGemini() {
-      const input = document.getElementById('geminiImagePrompt');
-      const prompt = input.value.trim();
-      const btn = document.getElementById('btnGenerateImage');
-      const resultBox = document.getElementById('geminiImageResultContainer');
-      const imgEl = document.getElementById('geminiGeneratedImg');
-      const captionEl = document.getElementById('geminiGeneratedImgCaption');
-
-      if (!prompt) {
-        showToast("Veuillez saisir une description visuelle.", "warning");
-        return;
-      }
-
-      btn.disabled = true;
-      btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-xs"></i><span>Création...</span>`;
-
-      const fullPrompt = `${prompt}, photorealistic high resolution, professional product commercial photography in Cotonou Benin, vibrant daylight, crisp details`;
-
-      const payload = {
-        contents: [{ role: 'user', parts: [{ text: fullPrompt }] }],
-        generationConfig: {
-          responseModalities: ['IMAGE'],
-          imageConfig: { aspectRatio: "1:1" }
-        }
-      };
-
-      try {
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-image:generateContent?key=${GEMINI_API_KEY}`;
-        const result = await fetchWithRetry(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-
-        const part = result?.candidates?.[0]?.content?.parts?.find(p => p.inlineData);
-        if (part && part.inlineData?.data) {
-          const imageUrl = `data:${part.inlineData.mimeType || 'image/png'};base64,${part.inlineData.data}`;
-          imgEl.src = imageUrl;
-          captionEl.textContent = `« ${prompt} »`;
-          resultBox.classList.remove('hidden');
-          showToast("Simulation visuelle générée avec succès !", "success");
-        } else {
-          throw new Error("Aucune image renvoyée par le modèle.");
-        }
-      } catch (err) {
-        console.error("Gemini Flash Image Error:", err);
-        showToast("Erreur lors de la génération d'image par l'IA.", "warning");
-      } finally {
-        btn.disabled = false;
-        btn.innerHTML = `<i class="fa-solid fa-image text-xs"></i><span>Générer</span>`;
-      }
-    }
-
-    const DELIVERY_CONFIG = {
-      'Cotonou': { fee: 1500, time: '24h Chrono (Livraison le jour même possible)' },
-      'Abomey-Calavi': { fee: 2000, time: '24h Chrono à domicile' },
-      'Porto-Novo': { fee: 2500, time: '24h à 48h' },
-      'Parakou': { fee: 3500, time: '48h par Relais Colis / Bus' },
-      'Ouidah': { fee: 2500, time: '24h Chrono' }
-    };
-
-    function formatFCFA(amount) {
-      return new Intl.NumberFormat('fr-FR').format(Math.round(amount)) + ' FCFA';
-    }
-
-    function changeGlobalCity(city) {
-      userCity = city;
-      document.getElementById('globalCitySelector').value = city;
-      document.getElementById('userCityHeader').textContent = `${city} & Régions`;
-      document.getElementById('heroDeliveryCityText').textContent = `À ${city} (${DELIVERY_CONFIG[city].time})`;
-      
-      const cartDelCity = document.getElementById('cartDeliveryCityName');
-      const cartDelPrice = document.getElementById('cartDeliveryPriceText');
-      if (cartDelCity && cartDelPrice) {
-        cartDelCity.textContent = city;
-        cartDelPrice.textContent = formatFCFA(DELIVERY_CONFIG[city].fee);
-      }
-
-      updateCartDrawerUI();
-      showToast(`Zone mise à jour : ${city} (${DELIVERY_CONFIG[city].fee} FCFA)`, "info");
-    }
-
-    function renderCategoryChips() {
-      const categories = [
-        { id: 'all', label: 'Tous les Produits', icon: 'fa-solid fa-border-all' },
-        { id: 'car', label: '🚗 Car Care', icon: '' },
-        { id: 'hair', label: '💇🏾‍♀️ Afro Hair', icon: '' },
-        { id: 'home-def', label: '🦟 Home Defense', icon: '' },
-        { id: 'sneaker', label: '👟 Sneaker Care', icon: '' },
-        { id: 'home-clean', label: '🧹 Home Clean', icon: '' },
-        { id: 'creator', label: '🎥 Creator Gear', icon: '' }
-      ];
-
-      const container = document.getElementById('categoryChipsContainer');
-      container.innerHTML = categories.map(cat => {
-        const isActive = currentCategory === cat.id;
-        return `
-          <button 
-            onclick="filterCategory('${cat.id}')" 
-            class="px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 whitespace-nowrap ${isActive ? 'bg-emerald-600 text-white shadow-md shadow-emerald-950/40' : 'bg-slate-900 border border-white/10 text-slate-300 hover:bg-slate-800'}">
-            ${cat.icon ? `<i class="${cat.icon} text-xs"></i>` : ''}
-            <span>${cat.label}</span>
-          </button>
-        `;
-      }).join('');
-    }
-
-    function filterCategory(catId) {
-      currentCategory = catId;
-      renderCategoryChips();
-      renderProductsGrid();
-    }
-
-    function sortProducts(criteria) {
-      currentSort = criteria;
-      renderProductsGrid();
-    }
-
-    function renderProductsGrid() {
-      const container = document.getElementById('productsGridContainer');
-      const heading = document.getElementById('catalogHeading');
-      const countEl = document.getElementById('displayedCount');
-
-      let list = [...PRODUCTS_DATA];
-
-      if (currentCategory !== 'all') {
-        list = list.filter(p => p.category === currentCategory);
-        const activeName = PRODUCTS_DATA.find(p => p.category === currentCategory)?.categoryName;
-        heading.textContent = activeName || "Catalogue Produits";
-      } else {
-        heading.textContent = "Tous les Produits à l'Unité";
-      }
-
-      if (currentSearchTerm) {
-        const term = currentSearchTerm.toLowerCase();
-        list = list.filter(p => 
-          p.title.toLowerCase().includes(term) ||
-          p.categoryName.toLowerCase().includes(term) ||
-          p.beninUse.toLowerCase().includes(term) ||
-          p.badge.toLowerCase().includes(term)
-        );
-        heading.textContent = `Résultats de recherche ("${currentSearchTerm}")`;
-      }
-
-      if (currentSort === 'price-asc') {
-        list.sort((a, b) => a.price - b.price);
-      } else if (currentSort === 'price-desc') {
-        list.sort((a, b) => b.price - a.price);
-      }
-
-      countEl.textContent = list.length;
-
-      if (list.length === 0) {
-        container.innerHTML = `
-          <div class="col-span-full py-16 text-center glass-card rounded-3xl p-8">
-            <i class="fa-solid fa-magnifying-glass text-3xl text-slate-500 mb-3"></i>
-            <h4 class="text-base font-bold text-white">Aucun produit ne correspond à votre recherche</h4>
-            <p class="text-xs text-slate-400 mt-1">Essayez avec un autre mot-clé ou réinitialisez la catégorie.</p>
-            <button onclick="resetFilters()" class="mt-4 px-4 py-2 rounded-xl bg-emerald-600 text-white font-bold text-xs">
-              Voir tous les produits
-            </button>
-          </div>
-        `;
-        return;
-      }
-
-      container.innerHTML = list.map(product => {
-        const isInPack = bonusPackItems.some(item => item.id === product.id);
-
-        return `
-          <div class="glass-card glass-card-hover rounded-3xl p-4 flex flex-col justify-between group">
-            <div>
-              <div class="relative aspect-square rounded-2xl overflow-hidden bg-slate-950 border border-white/5 mb-3 cursor-pointer" onclick="openProductModal('${product.id}')">
-                <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-black/70 backdrop-blur-md text-yellow-300 border border-white/10">
-                  ${product.badge}
-                </span>
-                <span class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded-md text-[9px] font-bold bg-slate-900/80 backdrop-blur-md text-slate-300">
-                  Détails <i class="fa-solid fa-arrow-up-right-from-square text-[8px] ml-0.5"></i>
-                </span>
-              </div>
-
-              <span class="text-[10px] font-black uppercase tracking-wider text-emerald-400 block mb-1">
-                ${product.categoryName}
-              </span>
-              <h3 onclick="openProductModal('${product.id}')" class="text-sm font-display font-black text-white leading-snug hover:text-emerald-300 transition cursor-pointer mb-2 line-clamp-2">
-                ${product.title}
-              </h3>
-
-              <p class="text-[11px] text-slate-300 line-clamp-2 mb-3">
-                ${product.beninUse}
-              </p>
-            </div>
-
-            <div class="pt-3 border-t border-white/10">
-              <div class="flex items-center justify-between mb-3">
-                <div>
-                  <span class="text-[9px] text-slate-400 uppercase font-bold block">Prix unitaire</span>
-                  <span class="text-base font-display font-black text-white">${formatFCFA(product.price)}</span>
-                </div>
-                <button onclick="addToCart('${product.id}')" class="w-8 h-8 rounded-xl bg-white/10 hover:bg-emerald-600 text-white flex items-center justify-center transition active:scale-90" title="Ajouter au panier individuel">
-                  <i class="fa-solid fa-cart-plus text-xs"></i>
-                </button>
-              </div>
-
-              <button 
-                onclick="toggleBonusPackItem('${product.id}')" 
-                class="w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${isInPack ? 'bg-amber-500/20 border border-amber-500/50 text-amber-300 hover:bg-red-500/20 hover:text-red-300' : 'bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 hover:brightness-110 shadow-sm'}">
-                <i class="fa-solid ${isInPack ? 'fa-check' : 'fa-plus'} text-xs"></i>
-                <span>${isInPack ? 'Retirer du Pack Bonus' : 'Ajouter au Pack Bonus'}</span>
-              </button>
-            </div>
-          </div>
-        `;
-      }).join('');
-    }
-
-    function resetFilters() {
-      currentCategory = 'all';
-      currentSearchTerm = '';
-      document.getElementById('aiSearchInput').value = '';
-      document.getElementById('mobileSearchInput').value = '';
-      renderCategoryChips();
-      renderProductsGrid();
-    }
-
-    const BEST_SELLER_IDS = [
-      { id: "prod-crt-1", rank: 1, badge: "N°1 DES VENTES BÉNIN", salesCount: "418 livrés", stockRemaining: 7 },
-      { id: "prod-home-1", rank: 2, badge: "TOP PROTECTION MAISON", salesCount: "354 livrés", stockRemaining: 9 },
-      { id: "prod-snk-1", rank: 3, badge: "CRAQUAGE JEUNESSE", salesCount: "298 livrés", stockRemaining: 12 },
-      { id: "prod-car-3", rank: 4, badge: "INDISPENSABLE AUTO", salesCount: "276 livrés", stockRemaining: 5 }
-    ];
-
-    function renderBestSellersFrame() {
-      const container = document.getElementById('bestSellersContainer');
-      if (!container) return;
-
-      container.innerHTML = BEST_SELLER_IDS.map(bs => {
-        const product = PRODUCTS_DATA.find(p => p.id === bs.id);
-        if (!product) return '';
-
-        const isInPack = bonusPackItems.some(item => item.id === product.id);
-
-        return `
-          <div class="glass-card glass-card-hover rounded-3xl p-5 border border-red-500/20 bg-gradient-to-b from-slate-900/95 to-[#0b101c] flex flex-col justify-between relative group">
-            <div class="absolute -top-3 left-4 px-3 py-0.5 rounded-full bg-gradient-to-r from-red-600 to-amber-500 text-slate-950 font-black text-[10px] tracking-wider uppercase shadow-md flex items-center gap-1.5 z-10">
-              <i class="fa-solid fa-trophy text-[9px]"></i>
-              <span>#${bs.rank} • ${bs.badge}</span>
-            </div>
-
-            <div class="pt-2">
-              <div class="relative aspect-square rounded-2xl overflow-hidden bg-slate-950 border border-white/10 mb-3 cursor-pointer" onclick="openProductModal('${product.id}')">
-                <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                <span class="absolute bottom-2.5 left-2.5 px-2 py-0.5 rounded-md text-[9px] font-black bg-black/70 backdrop-blur-md text-emerald-400 border border-emerald-500/30">
-                  <i class="fa-solid fa-fire text-red-400 mr-1"></i> ${bs.salesCount}
-                </span>
-                <span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md text-[9px] font-bold bg-red-950/80 text-red-300 border border-red-500/30">
-                  Plus que ${bs.stockRemaining} en stock
-                </span>
-              </div>
-
-              <span class="text-[10px] font-black uppercase tracking-wider text-emerald-400 block mb-1">
-                ${product.categoryName}
-              </span>
-              <h3 onclick="openProductModal('${product.id}')" class="text-sm font-display font-black text-white leading-snug hover:text-emerald-300 transition cursor-pointer mb-2 line-clamp-2">
-                ${product.title}
-              </h3>
-
-              <p class="text-[11px] text-slate-300 line-clamp-2 mb-3">
-                ${product.beninUse}
-              </p>
-            </div>
-
-            <div class="pt-3 border-t border-white/10 space-y-2.5">
-              <div class="flex items-center justify-between">
-                <div>
-                  <span class="text-[9px] text-slate-400 uppercase font-bold block">Prix spécial</span>
-                  <span class="text-base font-display font-black text-white">${formatFCFA(product.price)}</span>
-                </div>
-                <button onclick="addToCart('${product.id}')" class="px-2.5 py-1.5 rounded-xl bg-white/10 hover:bg-emerald-600 text-white font-bold text-xs flex items-center gap-1.5 transition active:scale-95" title="Commander à l'unité">
-                  <i class="fa-solid fa-cart-plus text-xs"></i>
-                  <span class="text-[10px]">Unité</span>
-                </button>
-              </div>
-
-              <button 
-                onclick="toggleBonusPackItem('${product.id}')" 
-                class="w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${isInPack ? 'bg-amber-500/20 border border-amber-500/50 text-amber-300 hover:bg-red-500/20 hover:text-red-300' : 'bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 hover:brightness-110 shadow-sm'}">
-                <i class="fa-solid ${isInPack ? 'fa-check' : 'fa-gift'} text-xs"></i>
-                <span>${isInPack ? 'Dans votre Pack Bonus' : 'Ajouter au Pack Bonus (-25%)'}</span>
-              </button>
-            </div>
-          </div>
-        `;
-      }).join('');
-    }
-
-    function scrollToBonusPack() {
-      const el = document.getElementById('pack-bonus-builder');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    const RECENT_ORDERS_SIM = [
-      "Dernière commande : Micro 2.4G à Cadjehoun (il y a 4 min)",
-      "Dernière commande : Lampe UV Moustiques à Calavi Arconville (il y a 9 min)",
-      "Dernière commande : Mousse Active Sneakers à Ganhi (il y a 14 min)",
-      "Dernière commande : Rénovateur Tableau de Bord à Fidjrossè (il y a 19 min)"
-    ];
-    let orderSimIndex = 0;
-    setInterval(() => {
-      orderSimIndex = (orderSimIndex + 1) % RECENT_ORDERS_SIM.length;
-      const el = document.getElementById('bestSellerLiveActivity');
-      if (el) el.textContent = RECENT_ORDERS_SIM[orderSimIndex];
-    }, 7000);
-
-    function toggleBonusPackItem(productId) {
-      const product = PRODUCTS_DATA.find(p => p.id === productId);
-      if (!product) return;
-
-      const existingIndex = bonusPackItems.findIndex(i => i.id === productId);
-
-      if (existingIndex > -1) {
-        bonusPackItems.splice(existingIndex, 1);
-        showToast(`${product.title} retiré du Pack Bonus`, "info");
-      } else {
-        if (bonusPackItems.length >= 5) {
-          showToast("Maximum 5 produits autorisés dans le Pack Bonus !", "warning");
-          return;
-        }
-        bonusPackItems.push(product);
-        showToast(`${product.title} ajouté au Pack Bonus !`, "success");
-      }
-
-      updateBonusPackUI();
-      renderProductsGrid();
-      renderBestSellersFrame();
-    }
-
-    function removeBonusPackItemByIndex(index) {
-      if (bonusPackItems[index]) {
-        const item = bonusPackItems[index];
-        bonusPackItems.splice(index, 1);
-        updateBonusPackUI();
-        renderProductsGrid();
-        renderBestSellersFrame();
-        showToast(`${item.title} retiré du pack`, "info");
-      }
-    }
-
-    function clearBonusPack() {
-      bonusPackItems = [];
-      updateBonusPackUI();
-      renderProductsGrid();
-      renderBestSellersFrame();
-      showToast("Pack Bonus vidé", "info");
-    }
-
-    function updateBonusPackUI() {
-      const count = bonusPackItems.length;
-      document.getElementById('packBonusCount').textContent = count;
-      document.getElementById('packBonusBadgeCount').textContent = count;
-
-      const container = document.getElementById('bonusPackSlotsContainer');
-      const hint = document.getElementById('packBonusStatusHint');
-      const badge3 = document.getElementById('tierBadge3');
-      const badge4 = document.getElementById('tierBadge4');
-      const badge5 = document.getElementById('tierBadge5');
-      const oldPriceEl = document.getElementById('packOldPrice');
-      const discountEl = document.getElementById('packDiscountAmount');
-      const finalPriceEl = document.getElementById('packFinalPrice');
-      const orderBtn = document.getElementById('orderPackBonusBtn');
-      const orderBtnText = document.getElementById('orderPackBonusBtnText');
-
-      [badge3, badge4, badge5].forEach(b => {
-        b.className = "text-center p-2.5 rounded-2xl bg-white/5 border border-white/10";
       });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
 
-      const rawTotal = bonusPackItems.reduce((sum, item) => sum + item.price, 0);
-      let discountRate = 0;
+    document.querySelectorAll('.fade-in-section').forEach(el => {
+      fadeInObserver.observe(el);
+    });
 
-      if (count === 3) {
-        discountRate = 0.15;
-        badge3.className = "text-center p-2.5 rounded-2xl bg-yellow-500/20 border border-yellow-400 text-yellow-300 font-black shadow-lg";
-        hint.innerHTML = `<span class="text-emerald-400"><i class="fa-solid fa-circle-check"></i> Bonus -15% activé ! Ajoutez un 4ème article pour passer à -20%</span>`;
-      } else if (count === 4) {
-        discountRate = 0.20;
-        badge4.className = "text-center p-2.5 rounded-2xl bg-yellow-500/20 border border-yellow-400 text-yellow-300 font-black shadow-lg";
-        hint.innerHTML = `<span class="text-emerald-400"><i class="fa-solid fa-circle-check"></i> Super Bonus -20% activé ! Ajoutez un 5ème article pour le max -25%</span>`;
-      } else if (count === 5) {
-        discountRate = 0.25;
-        badge5.className = "text-center p-2.5 rounded-2xl bg-gradient-to-r from-yellow-500/30 to-amber-500/30 border border-yellow-400 text-yellow-300 font-black shadow-lg";
-        hint.innerHTML = `<span class="text-yellow-300 font-black"><i class="fa-solid fa-trophy"></i> Félicitations : Bonus Maximum -25% activé !</span>`;
-      } else if (count === 0) {
-        hint.textContent = "Ajoutez au moins 3 articles pour activer le bonus";
+    // Geolocation Detection
+    async function detectUserLocation() {
+      const cityElement = document.getElementById('userCity');
+
+      // Try HTML5 Geolocation API
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          async (position) => {
+            const { latitude, longitude } = position.coords;
+
+            // Reverse geocoding with OpenStreetMap Nominatim (free)
+            try {
+              const response = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`);
+              const data = await response.json();
+
+              const city = data.address.city || data.address.town || data.address.village || 'Cotonou';
+              cityElement.textContent = city;
+              localStorage.setItem('userCity', city);
+            } catch (error) {
+              console.error('Reverse geocoding error:', error);
+            }
+          },
+          (error) => {
+            console.log('Geolocation denied, using IP fallback');
+            fallbackIPGeolocation();
+          }
+        );
       } else {
-        const remaining = 3 - count;
-        hint.textContent = `Ajoutez encore ${remaining} article${remaining > 1 ? 's' : ''} pour activer -15% de bonus immédiat`;
+        fallbackIPGeolocation();
       }
+    }
 
-      const discountValue = rawTotal * discountRate;
-      const finalPrice = rawTotal - discountValue;
+    // Fallback: IP Geolocation
+    async function fallbackIPGeolocation() {
+      try {
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+        const city = data.city || 'Cotonou';
 
-      oldPriceEl.textContent = formatFCFA(rawTotal);
-      discountEl.textContent = discountRate > 0 
-        ? `-${formatFCFA(discountValue)} (-${discountRate * 100}%)` 
-        : '0 FCFA (0%)';
-      finalPriceEl.textContent = formatFCFA(finalPrice);
+        document.getElementById('userCity').textContent = city;
+        localStorage.setItem('userCity', city);
+      } catch (error) {
+        console.error('IP Geolocation error:', error);
+      }
+    }
 
-      let slotsHtml = '';
-      for (let i = 0; i < 5; i++) {
-        const item = bonusPackItems[i];
-        if (item) {
-          slotsHtml += `
-            <div class="glass-card rounded-2xl p-3 border border-yellow-500/30 relative flex flex-col justify-between group">
-              <button onclick="removeBonusPackItemByIndex(${i})" class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center text-xs shadow-md hover:bg-red-600 transition">
-                <i class="fa-solid fa-xmark"></i>
-              </button>
-              <div class="aspect-square rounded-xl overflow-hidden bg-slate-950 mb-2">
-                <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
-              </div>
-              <span class="text-[9px] font-black uppercase text-emerald-400 block">${item.categoryName}</span>
-              <h5 class="text-[11px] font-bold text-white truncate">${item.title}</h5>
-              <span class="text-xs font-black text-white mt-1">${formatFCFA(item.price)}</span>
-            </div>
-          `;
+    // Load saved city or detect
+    const savedCity = localStorage.getItem('userCity');
+    if (savedCity) {
+      document.getElementById('userCity').textContent = savedCity;
+    } else {
+      detectUserLocation();
+    }
+
+    // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+      searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          const query = searchInput.value.trim();
+          if (query) {
+            console.log('Searching for:', query);
+            // TODO: Implement search with Supabase
+            alert(`Recherche : ${query}`);
+          }
+        }
+      });
+    }
+
+    // Product favorite toggle
+    document.querySelectorAll('.fa-heart').forEach(heartIcon => {
+      heartIcon.closest('button')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (heartIcon.classList.contains('far')) {
+          heartIcon.classList.remove('far');
+          heartIcon.classList.add('fas');
+          heartIcon.style.color = '#EF4444';
         } else {
-          slotsHtml += `
-            <div class="rounded-2xl border-2 border-dashed border-white/10 p-4 flex flex-col items-center justify-center text-center text-slate-500 aspect-square">
-              <i class="fa-solid fa-plus text-lg mb-1 opacity-50"></i>
-              <span class="text-[11px] font-bold">Emplacement ${i + 1}</span>
-              <span class="text-[9px] text-slate-600 mt-0.5">Ajouter un produit</span>
-            </div>
-          `;
+          heartIcon.classList.remove('fas');
+          heartIcon.classList.add('far');
+          heartIcon.style.color = '';
         }
-      }
-      container.innerHTML = slotsHtml;
-
-      if (count >= 3 && count <= 5) {
-        orderBtn.disabled = false;
-        orderBtn.className = "flex-1 py-3.5 px-6 rounded-2xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-black text-xs transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/60 cursor-pointer active:scale-95";
-        orderBtnText.textContent = `Commander ce Pack Bonus (${formatFCFA(finalPrice)}) sur WhatsApp`;
-      } else {
-        orderBtn.disabled = true;
-        orderBtn.className = "flex-1 py-3.5 px-6 rounded-2xl bg-slate-800 text-slate-500 font-black text-xs transition flex items-center justify-center gap-2 cursor-not-allowed";
-        orderBtnText.textContent = `Ajoutez au moins 3 articles pour commander`;
-      }
-    }
-
-    function orderBonusPackViaWhatsApp() {
-      const count = bonusPackItems.length;
-      if (count < 3 || count > 5) {
-        showToast("Le pack doit contenir entre 3 et 5 articles !", "warning");
-        return;
-      }
-
-      const rawTotal = bonusPackItems.reduce((sum, item) => sum + item.price, 0);
-      let discountRate = count === 3 ? 0.15 : count === 4 ? 0.20 : 0.25;
-      const discountVal = rawTotal * discountRate;
-      const finalPrice = rawTotal - discountVal;
-
-      const itemsList = bonusPackItems.map((item, idx) => `${idx + 1}. ${item.title} (${formatFCFA(item.price)})`).join('\n');
-
-      const message = `Bonjour BE-MARKET Bénin,\n\nJe souhaite commander mon *Pack Bonus Additionnel* (${count} articles) :\n\n${itemsList}\n\n- Sous-total normal : ${formatFCFA(rawTotal)}\n- Remise Promo active : -${discountRate * 100}% (-${formatFCFA(discountVal)})\n- *PRIX FINAL DU PACK : ${formatFCFA(finalPrice)}*\n\nMa Zone de livraison : ${userCity}\nModalité de paiement : Cash / MoMo à la réception.\n\nMerci de me confirmer la livraison !`;
-
-      const encoded = encodeURIComponent(message);
-      window.open(`https://wa.me/22901990011?text=${encoded}`, '_blank');
-    }
-
-    const VIDEO_SCENARIOS = {
-      car: {
-        tag: "🚗 Car Care Detailing",
-        title: "Rénovation plastique et zéro micro-rayure face à la poussière de Cotonou",
-        thumb: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=800&q=80"
-      },
-      hair: {
-        tag: "💇🏾‍♀️ Afro Hair Care",
-        title: "Démêlage souple sans casse et maintien de l'hydratation sous bonnet satin",
-        thumb: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80"
-      },
-      mosq: {
-        tag: "🦟 Home Defense",
-        title: "Piège moustiques silencieux UV et raquette foudroyante à Calavi",
-        thumb: "https://images.unsplash.com/photo-1584697964190-705b89368d65?auto=format&fit=crop&w=800&q=80"
-      },
-      sneaker: {
-        tag: "👟 Sneaker Care",
-        title: "Restauration immédiate d'une paire de baskets couverte de terre rouge",
-        thumb: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80"
-      },
-      creator: {
-        tag: "🎥 Creator Gear",
-        title: "Test micro sans fil en pleine circulation urbaine sans parasite",
-        thumb: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80"
-      }
-    };
-
-    function switchHeroVideo(key) {
-      const scenario = VIDEO_SCENARIOS[key];
-      if (!scenario) return;
-
-      document.getElementById('videoCategoryTag').textContent = scenario.tag;
-      document.getElementById('videoTitleText').textContent = scenario.title;
-      document.getElementById('heroVideoThumbnail').src = scenario.thumb;
-      videoProgress = 0;
-      updateProgressBar();
-    }
-
-    function toggleHeroVideoPlay() {
-      isHeroVideoPlaying = !isHeroVideoPlaying;
-      const icon = document.getElementById('videoPlayIcon');
-      if (isHeroVideoPlaying) {
-        icon.className = "fa-solid fa-pause text-xs";
-        startVideoTimer();
-      } else {
-        icon.className = "fa-solid fa-play text-xs ml-0.5";
-        clearInterval(videoInterval);
-      }
-    }
-
-    function startVideoTimer() {
-      clearInterval(videoInterval);
-      videoInterval = setInterval(() => {
-        if (!isHeroVideoPlaying) return;
-        videoProgress += 1.5;
-        if (videoProgress >= 100) {
-          videoProgress = 0;
-          const keys = Object.keys(VIDEO_SCENARIOS);
-          const randomKey = keys[Math.floor(Math.random() * keys.length)];
-          switchHeroVideo(randomKey);
-        }
-        updateProgressBar();
-      }, 100);
-    }
-
-    function updateProgressBar() {
-      const bar = document.getElementById('videoProgressBar');
-      if (bar) bar.style.width = `${videoProgress}%`;
-    }
-
-    function openProductModal(productId) {
-      const product = PRODUCTS_DATA.find(p => p.id === productId);
-      if (!product) return;
-
-      activeModalProduct = product;
-
-      document.getElementById('modalProductImg').src = product.image;
-      document.getElementById('modalProductBadge').textContent = product.badge;
-      document.getElementById('modalProductCategory').textContent = product.categoryName;
-      document.getElementById('modalProductTitle').textContent = product.title;
-      document.getElementById('modalProductPrice').textContent = formatFCFA(product.price);
-      document.getElementById('modalProductBeninUse').textContent = product.beninUse;
-      document.getElementById('modalProductSpec1').textContent = product.spec1;
-      document.getElementById('modalProductSpec2').textContent = product.spec2;
-
-      const isInPack = bonusPackItems.some(i => i.id === product.id);
-      const packBtn = document.getElementById('modalBtnAddToPack');
-      if (isInPack) {
-        packBtn.innerHTML = `<i class="fa-solid fa-check"></i><span>Déjà dans le Pack Bonus (Retirer)</span>`;
-        packBtn.className = "w-full py-3 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/40 font-black text-xs transition flex items-center justify-center gap-2";
-      } else {
-        packBtn.innerHTML = `<i class="fa-solid fa-gift"></i><span>Ajouter au Pack Bonus (-15% à -25%)</span>`;
-        packBtn.className = "w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-slate-950 font-black text-xs transition flex items-center justify-center gap-2 shadow-md";
-      }
-
-      document.getElementById('productModal').classList.remove('hidden');
-      document.body.classList.add('overflow-hidden');
-    }
-
-    function closeProductModal() {
-      if (currentTtsAudioNode) {
-        currentTtsAudioNode.pause();
-        currentTtsAudioNode = null;
-      }
-      document.getElementById('productModal').classList.add('hidden');
-      document.body.classList.remove('overflow-hidden');
-    }
-
-    function handleModalAddToPack() {
-      if (!activeModalProduct) return;
-      toggleBonusPackItem(activeModalProduct.id);
-      closeProductModal();
-    }
-
-    function handleModalOrderSoloWhatsApp() {
-      if (!activeModalProduct) return;
-      const message = `Bonjour BE-MARKET Bénin,\n\nJe souhaite commander l'article suivant à l'unité :\n- Produit : ${activeModalProduct.title}\n- Prix : ${formatFCFA(activeModalProduct.price)}\n- Catégorie : ${activeModalProduct.categoryName}\n\nMa Zone de livraison : ${userCity}\nPaiement : À la livraison.\n\nMerci de me préciser le délai d'arrivée du coursier.`;
-      const encoded = encodeURIComponent(message);
-      closeProductModal();
-      window.open(`https://wa.me/22901990011?text=${encoded}`, '_blank');
-    }
-
-    function addToCart(productId) {
-      const product = PRODUCTS_DATA.find(p => p.id === productId);
-      if (!product) return;
-
-      const existing = cart.find(item => item.id === productId);
-      if (existing) {
-        existing.quantity += 1;
-      } else {
-        cart.push({ ...product, quantity: 1 });
-      }
-
-      updateCartDrawerUI();
-      showToast(`${product.title} ajouté au panier`, "success");
-    }
-
-    function updateCartQuantity(productId, delta) {
-      const item = cart.find(i => i.id === productId);
-      if (!item) return;
-
-      item.quantity += delta;
-      if (item.quantity <= 0) {
-        cart = cart.filter(i => i.id !== productId);
-      }
-      updateCartDrawerUI();
-    }
-
-    function updateCartDrawerUI() {
-      const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
-      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-      const deliveryFee = totalQty > 0 ? (DELIVERY_CONFIG[userCity]?.fee || 1500) : 0;
-      const total = subtotal + deliveryFee;
-
-      document.getElementById('cartCountBadge').textContent = totalQty;
-      document.getElementById('cartDrawerCountText').textContent = `${totalQty} article${totalQty > 1 ? 's' : ''}`;
-      document.getElementById('cartSubtotalText').textContent = formatFCFA(subtotal);
-      document.getElementById('cartDeliveryCityName').textContent = userCity;
-      document.getElementById('cartDeliveryPriceText').textContent = formatFCFA(deliveryFee);
-      document.getElementById('cartTotalText').textContent = formatFCFA(total);
-
-      const container = document.getElementById('cartItemsContainer');
-
-      if (cart.length === 0) {
-        container.innerHTML = `
-          <div class="py-16 text-center text-slate-400">
-            <i class="fa-solid fa-bag-shopping text-4xl mb-3 opacity-30 text-slate-500"></i>
-            <p class="font-bold text-white text-sm">Votre panier est vide</p>
-            <p class="text-xs text-slate-400 mt-1">Sélectionnez des articles à l'unité ou utilisez le Pack Bonus.</p>
-          </div>
-        `;
-        return;
-      }
-
-      container.innerHTML = cart.map(item => `
-        <div class="p-3 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between gap-3">
-          <div class="w-12 h-12 rounded-xl overflow-hidden bg-slate-950 shrink-0">
-            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
-          </div>
-          <div class="flex-1 min-w-0">
-            <span class="text-[9px] font-black uppercase text-emerald-400 block">${item.categoryName}</span>
-            <h5 class="text-xs font-bold text-white truncate">${item.title}</h5>
-            <span class="text-xs font-black text-slate-300">${formatFCFA(item.price)}</span>
-          </div>
-          <div class="flex items-center gap-1.5 shrink-0 bg-slate-900 p-1 rounded-xl border border-white/10">
-            <button onclick="updateCartQuantity('${item.id}', -1)" class="w-6 h-6 rounded-lg text-slate-400 hover:text-white flex items-center justify-center font-bold text-xs">-</button>
-            <span class="text-xs font-black px-1 text-white">${item.quantity}</span>
-            <button onclick="updateCartQuantity('${item.id}', 1)" class="w-6 h-6 rounded-lg text-slate-400 hover:text-white flex items-center justify-center font-bold text-xs">+</button>
-          </div>
-        </div>
-      `).join('');
-    }
-
-    function toggleCartDrawer() {
-      const drawer = document.getElementById('cartDrawer');
-      const overlay = document.getElementById('cartOverlay');
-      const panel = document.getElementById('cartPanel');
-
-      const isOpen = !panel.classList.contains('translate-x-full');
-
-      if (isOpen) {
-        panel.classList.add('translate-x-full');
-        overlay.classList.remove('opacity-100');
-        overlay.classList.add('opacity-0');
-        setTimeout(() => drawer.classList.add('pointer-events-none'), 300);
-      } else {
-        updateCartDrawerUI();
-        drawer.classList.remove('pointer-events-none');
-        overlay.classList.remove('opacity-0');
-        overlay.classList.add('opacity-100');
-        panel.classList.remove('translate-x-full');
-      }
-    }
-
-    function checkoutCartViaWhatsApp() {
-      if (cart.length === 0) {
-        showToast("Votre panier est vide", "warning");
-        return;
-      }
-
-      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-      const deliveryFee = DELIVERY_CONFIG[userCity]?.fee || 1500;
-      const total = subtotal + deliveryFee;
-
-      const itemsList = cart.map(i => `- ${i.title} x${i.quantity} = ${formatFCFA(i.price * i.quantity)}`).join('\n');
-
-      const message = `Bonjour BE-MARKET Bénin,\n\nJe souhaite valider ma commande de panier :\n\n${itemsList}\n\n- Sous-total : ${formatFCFA(subtotal)}\n- Livraison (${userCity}) : ${formatFCFA(deliveryFee)}\n- *TOTAL À RÉGLER : ${formatFCFA(total)}*\n\nMode de paiement : Cash / MoMo à la réception.\nMerci de me confirmer la prise en charge !`;
-
-      const encoded = encodeURIComponent(message);
-      toggleCartDrawer();
-      window.open(`https://wa.me/22901990011?text=${encoded}`, '_blank');
-    }
-
-    function showToast(message, type = "success") {
-      const box = document.getElementById('toastBox');
-      const msg = document.getElementById('toastMsg');
-      const icon = document.getElementById('toastIcon');
-
-      msg.textContent = message;
-
-      if (type === "warning") {
-        icon.className = "w-5 h-5 rounded-full bg-bjYellow text-slate-900 flex items-center justify-center text-[10px]";
-        icon.innerHTML = "!";
-      } else if (type === "info") {
-        icon.className = "w-5 h-5 rounded-full bg-blue-500 text-white flex items-center justify-center text-[10px]";
-        icon.innerHTML = "i";
-      } else {
-        icon.className = "w-5 h-5 rounded-full bg-bjGreen text-white flex items-center justify-center text-[10px]";
-        icon.innerHTML = "✓";
-      }
-
-      box.classList.remove('-translate-y-24', 'opacity-0');
-      box.classList.add('translate-y-0', 'opacity-100');
-
-      clearTimeout(window._toastTimer);
-      window._toastTimer = setTimeout(() => {
-        box.classList.add('-translate-y-24', 'opacity-0');
-        box.classList.remove('translate-y-0', 'opacity-100');
-      }, 3000);
-    }
-
-    document.getElementById('aiSearchInput').addEventListener('input', (e) => {
-      currentSearchTerm = e.target.value.trim();
-      renderProductsGrid();
+      });
     });
 
-    document.getElementById('mobileSearchInput').addEventListener('input', (e) => {
-      currentSearchTerm = e.target.value.trim();
-      renderProductsGrid();
-    });
-
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeProductModal();
-        closeGeminiModal();
-        const panel = document.getElementById('cartPanel');
-        if (!panel.classList.contains('translate-x-full')) toggleCartDrawer();
-      }
-    });
-
-    window.addEventListener('DOMContentLoaded', () => {
-      renderCategoryChips();
-      renderBestSellersFrame();
-      renderProductsGrid();
-      updateBonusPackUI();
-      updateCartDrawerUI();
-      startVideoTimer();
-    });
+    // Console branding
+    console.log('%cBeMarket Bénin', 'font-size: 32px; font-weight: bold; background: linear-gradient(135deg, #6366F1, #06B6D4); -webkit-background-clip: text; color: transparent;');
+    console.log('%cMarketplace #1 au Bénin 🇧🇯', 'font-size: 14px; color: #64748B;');
+    console.log('%cPowered by Vercel + Supabase', 'font-size: 12px; color: #06B6D4;');
   </script>
+
 </body>
 </html>
